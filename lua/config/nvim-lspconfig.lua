@@ -98,6 +98,7 @@ local codelldb_path = extension_path .. "adapter/codelldb"
 local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
 
 -- https://github.com/rust-lang/rust-analyzer
+-- rust lsp
 require("rust-tools").setup({
 	-- rust-analyer options
 	server = {
@@ -111,14 +112,14 @@ require("rust-tools").setup({
 })
 
 -- https://github.com/sumneko/lua-language-server
--- lua
+-- lua lsp
 require("lspconfig").sumneko_lua.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 -- https://github.com/typescript-language-server/typescript-language-server
--- javascript
+-- typescript lsp
 require("lspconfig")["tsserver"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,

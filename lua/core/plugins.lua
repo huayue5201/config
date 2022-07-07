@@ -93,13 +93,9 @@ return require("packer").startup({
 			end,
 		})
 
+		-- https://github.com/romgrk/barbar.nvim
 		-- TAB栏
-		use({
-			"romgrk/barbar.nvim",
-			config = function()
-				require("config.barbar")
-			end,
-		})
+		use({ "romgrk/barbar.nvim" })
 
 		-- input or select UI组件
 		use({
@@ -253,15 +249,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- 插入模式下切换行号模式
-		use({
-			"nkakouros-original/numbers.nvim",
-			event = { "InsertEnter" },
-			config = function()
-				require("numbers").setup()
-			end,
-		})
-
 		----------------------------------搜索-----------------------------
 		-------------------------------------------------------------------
 
@@ -368,14 +355,12 @@ return require("packer").startup({
 
 		-- https://github.com/SmiteshP/nvim-navic
 		-- 一个简单的状态栏/winbar 组件，它使用 LSP 来显示您当前的代码上下文
-		use({
-			"SmiteshP/nvim-navic",
-		})
+		use({ "SmiteshP/nvim-navic" })
 
 		-----------------------------补全-----------------------------
 		--------------------------------------------------------------
 
-		-- tmp补全
+		-- cmp补全
 		use({
 			"hrsh7th/nvim-cmp", -- 代码补全核心插件
 			requires = {
@@ -529,9 +514,9 @@ return require("packer").startup({
 
 	config = {
 		-- 通过ssh链接安装插件
-			git = {
-				default_url_format = "git@github.com:%s",
-			},
+		git = {
+			default_url_format = "git@github.com:%s",
+		},
 		-- 插件加载分析
 		profile = {
 			enable = true,
