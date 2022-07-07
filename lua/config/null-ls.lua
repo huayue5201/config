@@ -27,10 +27,6 @@ null_ls.setup({
             diagnostics_format = "[#{c}] #{m} (#{s})",
         }),
 
-        -- https://taplo.tamasfe.dev/cli/installation/cargo.html
-        -- tmol格式化
-        null_ls.builtins.formatting.taplo,
-
         -- git 代码操作
         -- null_ls.builtins.code_actions.gitsigns,
 

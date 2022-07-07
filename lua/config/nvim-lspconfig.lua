@@ -46,7 +46,7 @@ local on_attach = function(client, bufnr)
 		})
 	end
 
-    -- https://github.com/SmiteshP/nvim-navic
+	-- https://github.com/SmiteshP/nvim-navic
 	require("nvim-navic").attach(client, bufnr)
 	-- https://github.com/stevearc/aerial.nvim
 	require("aerial").on_attach(client, bufnr)
@@ -120,6 +120,13 @@ require("lspconfig").sumneko_lua.setup({
 -- https://github.com/typescript-language-server/typescript-language-server
 -- javascript
 require("lspconfig")["tsserver"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+-- https://taplo.tamasfe.dev/cli/installation/cargo.html
+-- tmol lsp 
+require("lspconfig").taplo.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
