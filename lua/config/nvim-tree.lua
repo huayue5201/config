@@ -3,12 +3,20 @@
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
 	view = {
+		-- 自适应大小
 		adaptive_size = true,
+		-- 按键映射
+		-- 列号数字
+		number = false,
+		-- 相对列号
+		relativenumber = false,
 		mappings = {
 			list = {
 				{ key = "u", action = "dir_up" },
 			},
 		},
+		-- 位置
+		side = "right",
 	},
 	renderer = {
 		group_empty = true,

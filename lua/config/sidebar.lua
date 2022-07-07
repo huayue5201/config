@@ -10,7 +10,7 @@ require("sidebar-nvim").setup({
 		end,
 	},
     -- sidbar位置
-	side = "right",
+	side = "left",
 	-- 隐藏sidbar状态栏
 	hide_statusline = true,
 	-- 组件格式
