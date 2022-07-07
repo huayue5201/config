@@ -122,7 +122,7 @@ return require("packer").startup({
 			"kevinhwang91/nvim-bqf",
 			ft = "qf",
 			requires = {
-				"junegunn/fzf",
+				{ "junegunn/fzf" },
 				run = function()
 					vim.fn["fzf#install"]()
 				end,
@@ -132,11 +132,11 @@ return require("packer").startup({
 			end,
 		})
 
-		-- 稳定窗口事件
+		-- 美化quickfix lsp诊断内容
 		use({
-			"luukvbaal/stabilize.nvim",
+			"https://gitlab.com/yorickpeterse/nvim-pqf.git",
 			config = function()
-				require("config.stabilize")
+				require("config.bqf")
 			end,
 		})
 
@@ -203,6 +203,7 @@ return require("packer").startup({
                 ]])
 			end,
 		})
+
 		-------------------------------文本操作--------------------------------
 		---------------------------------------------------------------------
 
@@ -365,7 +366,7 @@ return require("packer").startup({
 			end,
 		})
 
-        -- https://github.com/SmiteshP/nvim-navic
+		-- https://github.com/SmiteshP/nvim-navic
 		-- 一个简单的状态栏/winbar 组件，它使用 LSP 来显示您当前的代码上下文
 		use({
 			"SmiteshP/nvim-navic",
@@ -537,9 +538,9 @@ return require("packer").startup({
 
 	config = {
 		-- 通过ssh链接安装插件
-		--		git = {
-		--			default_url_format = "git@github.com:%s",
-		--		},
+			git = {
+				default_url_format = "git@github.com:%s",
+			},
 		-- 插件加载分析
 		profile = {
 			enable = true,

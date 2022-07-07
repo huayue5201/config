@@ -1,3 +1,5 @@
+# WARN:插件集合https://github.com/unixorn/awesome-zsh-plugins#zi
+#
 # Created by newuser for 5.8.1
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -76,7 +78,7 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
-# 主题颜色
+# 设置参数
 export FZF_DEFAULT_OPTS='--height 40% --layout reverse --info inline --border --preview "bat --style=numbers --color=always --line-range :500 {}" --color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
 
 #历史纪录条目数量

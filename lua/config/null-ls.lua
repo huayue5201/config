@@ -32,5 +32,9 @@ null_ls.setup({
         null_ls.builtins.formatting.taplo,
         -- git 代码操作
         -- null_ls.builtins.code_actions.gitsigns,
+
+        -- https://github.com/koalaman/shellcheck
+        -- shellcheck
+        null_ls.builtins.code_actions.shellcheck,
     },
 })
