@@ -449,15 +449,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- 代码运行器
-		use({
-			"michaelb/sniprun",
-			run = "bash ./install.sh",
-			config = function()
-				require("config.sniprun")
-			end,
-		})
-
 		---------------------------------其他------------------------------
 		-------------------------------------------------------------------
 
