@@ -28,7 +28,7 @@ vim.keymap.set("n", "<S-TAB>", "<cmd>BufferNext<CR>")
 vim.keymap.set("n", "<leader>gg", "ggVG")
 
 -- 手动开启拼写检查
-vim.keymap.set("n", "sp", ":setlocal spell! spelllang=en_us<CR>")
+vim.keymap.set("n", "<leader>sp", ":setlocal spell! spelllang=en_us<CR>")
 
 -- 复制到"*"\"+"寄存器
 vim.keymap.set("n", "<leader>y", '"+y')
