@@ -11,12 +11,6 @@ vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
--- 插入模式下移动光标
-vim.keymap.set("i", "<C-j>", "<Down>")
-vim.keymap.set("i", "<C-k>", "<Up>")
-vim.keymap.set("i", "<C-l>", "<Right>")
-vim.keymap.set("i", "<C-h>", "<Left>")
-
 -- 关闭当前buffer
 vim.keymap.set("n", "<C-q>", "<cmd>BufferClose<CR>")
 -- 切换到下一个buffer
