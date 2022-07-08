@@ -7,7 +7,7 @@ vim.o.mouse = "a"
 -- 退出vim询问是否保存
 vim.o.confirm = true
 -- 是否显示绝对行号
--- vim.o.number = true
+vim.o.number = true
 -- 显示相对行号
 -- vim.o.relativenumber = true
 -- 是否启用系统剪切板

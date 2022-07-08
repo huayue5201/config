@@ -9,9 +9,6 @@ local telescope_actions = require("telescope.actions")
 -- aerial集成 :Telescope aerial(命令)
 require("telescope").load_extension("aerial")
 
--- harpoon集成
--- require("telescope").load_extension('harpoon')
-
 -- 项目管理
 require("telescope").load_extension("projects")
 

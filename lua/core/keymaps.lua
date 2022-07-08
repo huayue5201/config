@@ -62,7 +62,10 @@ vim.keymap.set("n", "<leader>fp", ":Telescope projects<cr>")
 vim.keymap.set("n", "<leader>ts", ":SidebarNvimToggle<cr>")
 
 -- marks
-vim.keymap.set("n", "<leader>tr", "<cmd>MarksQFListBuf<cr>")
+-- 查看全部标签
+vim.keymap.set("n", "<leader>bk", "<cmd>MarksQFListAll<cr>")
+-- telescope搜索标签
+vim.keymap.set("n", "<leader>bf", require("telescope.builtin").marks)
 
 -- TODO管理
 vim.keymap.set("n", "<leader>to", ":TodoTelescope<cr>")

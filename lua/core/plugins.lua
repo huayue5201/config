@@ -97,13 +97,9 @@ return require("packer").startup({
 		-- TAB栏
 		use({ "romgrk/barbar.nvim" })
 
+		-- https://github.com/stevearc/dressing.nvim
 		-- input or select UI组件
-		use({
-			"stevearc/dressing.nvim",
-			config = function()
-				require("config.dressing")
-			end,
-		})
+		use({ "stevearc/dressing.nvim" })
 
 		-- nvim输出消息的弹窗 UI
 		use({
@@ -200,6 +196,14 @@ return require("packer").startup({
 			end,
 		})
 
+		-- 和J拼接反向操作
+		use({
+			"AckslD/nvim-trevJ.lua",
+			config = function()
+				require("config.nvim-trevJ")
+			end,
+		})
+
 		-------------------------------文本操作--------------------------------
 		---------------------------------------------------------------------
 
@@ -207,11 +211,12 @@ return require("packer").startup({
 		-- 多光标
 		use({ "mg979/vim-visual-multi" })
 
+		-- https://github.com/chentoast/marks.nvim
 		--marks
 		use({
 			"chentoast/marks.nvim",
 			config = function()
-				require("config.marks")
+				require("marks").setup()
 			end,
 		})
 
@@ -281,14 +286,6 @@ return require("packer").startup({
 			"folke/todo-comments.nvim",
 			config = function()
 				require("config.todo-comments")
-			end,
-		})
-
-		-- 项目标签管理
-		use({
-			"ThePrimeagen/harpoon",
-			config = function()
-				require("config.harpoon")
 			end,
 		})
 
