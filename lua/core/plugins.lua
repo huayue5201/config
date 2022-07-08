@@ -57,7 +57,12 @@ return require("packer").startup({
 
 		-- https://github.com/nathom/filetype.nvim
 		-- 该插件加快启动速度
-		use("nathom/filetype.nvim")
+		use({
+			"nathom/filetype.nvim",
+			config = function()
+				require("config.filetype")
+			end,
+		})
 
 		-- 多个插件依赖该模块(官方)
 		use({ "nvim-lua/plenary.nvim" })
