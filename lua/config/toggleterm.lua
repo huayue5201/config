@@ -10,5 +10,5 @@ require("toggleterm").setup({
 })
 
 -- 打开或关闭所有终端
-vim.keymap.set("n", "<c-h>", "<cmd>ToggleTermToggleAll<CR>")
-vim.keymap.set("t", "<c-h>", "<cmd>ToggleTermToggleAll<CR>")
+vim.keymap.set("n", "<c-t>", "<cmd>ToggleTermToggleAll<CR>")
+vim.keymap.set("t", "<c-t>", "<cmd>ToggleTermToggleAll<CR>")

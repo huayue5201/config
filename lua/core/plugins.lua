@@ -241,6 +241,14 @@ return require("packer").startup({
 			end,
 		})
 
+		-- 增强复制粘贴功能
+		use({
+			"gbprod/yanky.nvim",
+			config = function()
+				require("config.yanky")
+			end,
+		})
+
 		-- https://github.com/machakann/vim-sandwich
 		-- 环绕符号 快捷键：sa添加 sd删除 sr替换
 		use({ "machakann/vim-sandwich" })
