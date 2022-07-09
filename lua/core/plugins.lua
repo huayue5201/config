@@ -16,10 +16,13 @@ local is_wsl = (function()
 	return not not string.find(output[1] or "", "WSL")
 end)()
 
-local is_mac = has("maxunix")
-local is_linx = not is_wsl and not is_mac
+local is_mac = has("macunix")
+local is_linux = not is_wsl and not is_mac
 
--- require('packer.luarocks').cfg({ luarocks =
+local max_jobs = nil
+if is_mac then
+	max_jobs = 32
+end
 
 return require("packer").startup({
 	function(use)
@@ -51,6 +54,7 @@ return require("packer").startup({
 
 			use(opts)
 		end
+
 		------------------------------------------------------------|
 		-----------------| 插件书写在下面 |-------------------------|
 		------------------------------------------------------------|
@@ -152,9 +156,6 @@ return require("packer").startup({
 		-- 基于treesitter的文本操作模块(官方)
 		use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 
-		-- 基于treesitter的code重构模块(官方)
-		use({ "nvim-treesitter/nvim-treesitter-refactor" })
-
 		-- Treesitter驱动的拼写检查器
 		use({
 			"lewis6991/spellsitter.nvim",
@@ -168,15 +169,6 @@ return require("packer").startup({
 
 		-- 彩虹括号(依赖treesitter)
 		use({ "p00f/nvim-ts-rainbow" })
-
-		-- 顶部悬停显示光标所在行上下文
-		use({
-			"nvim-treesitter/nvim-treesitter-context",
-			ft = { "go", "rust", "lua" },
-			config = function()
-				require("config.treesitter-context")
-			end,
-		})
 
 		-- tab键跳出括号,引号,上下文范围
 		use({

@@ -41,8 +41,6 @@ vim.o.pumheight = 14
 vim.o.autoindent = true
 -- 缩进规则为"plugin" nvim/plugin/xx.lua
 vim.o.smartindent = true
--- 是否开启单词拼写检查
--- vim.o.spell = true
 -- 设定单词拼写检查的语言
 vim.o.spelllang = "en_us,cjk"
 -- 不区分大小写的搜索，除非搜索中包含大写
@@ -52,3 +50,5 @@ vim.o.smartcase = true
 vim.o.list = true
 -- 空格用⋅显示
 vim.opt.listchars:append("space:⋅")
+-- 边栏空一格显示符号
+vim.wo.signcolumn = "yes"

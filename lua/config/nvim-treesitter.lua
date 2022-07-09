@@ -17,36 +17,6 @@ require("nvim-treesitter.configs").setup({
 	autotag = {
 		enable = true,
 	},
-	-- https://github.com/nvim-treesitter/nvim-treesitter-refactor
-	-- treesitter code重构模块
-	refactor = {
-		-- 突出显示光标下当前符号的定义和用法
-		-- highlight_definitions = {
-		-- 	enable = true,
-		-- 	-- Set to false if you have an `updatetime` of ~100.
-		-- 	clear_on_cursor_move = true,
-		-- },
-		-- 高亮块
-		-- highlight_current_scope = { enable = true },
-		-- 重命名
-		smart_rename = {
-			enable = true,
-			keymaps = {
-				smart_rename = "gnr",
-			},
-		},
-		-- 定义跳转
-		navigation = {
-			enable = true,
-			keymaps = {
-				goto_definition = "gnd",
-				list_definitions = "gnD",
-				list_definitions_toc = "gO",
-				goto_next_usage = "<a-*>",
-				goto_previous_usage = "<a-#>",
-			},
-		},
-	},
 	-- https://github.com/p00f/nvim-ts-rainbow
 	-- 彩虹括号
 	rainbow = {
@@ -104,7 +74,7 @@ require("nvim-treesitter.configs").setup({
 				["ic"] = "@class.inner",
 			},
 		},
-		-- 将光标下的节点与下一个或上一个节点交换,像函数参数或参数
+		-- 将光标下的节点与下一个或上一个节点交换,像函数参数
 		swap = {
 			enable = true,
 			swap_next = {

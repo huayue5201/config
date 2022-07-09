@@ -19,7 +19,29 @@ require("nvim-tree").setup({
 		side = "right",
 	},
 	renderer = {
+		add_trailing = true,
 		group_empty = true,
+		highlight_git = true,
+		full_name = true,
+		indent_markers = {
+			enable = true,
+			icons = {
+				corner = "└ ",
+				edge = "│ ",
+				item = "│ ",
+				none = "  ",
+			},
+		},
+	},
+	diagnostics = {
+		enable = true,
+		show_on_dirs = true,
+		icons = {
+			hint = "",
+			info = "",
+			warning = "",
+			error = "",
+		},
 	},
 	filters = {
 		dotfiles = true,
