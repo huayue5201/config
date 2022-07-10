@@ -20,7 +20,7 @@ require("nvim-tree").setup({
 			},
 		},
 		-- 位置
-		side = "right",
+		side = "left",
 	},
 	actions = {
 		open_file = {

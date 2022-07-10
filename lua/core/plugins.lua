@@ -349,7 +349,13 @@ return require("packer").startup({
 		})
 
 		-- 代码操作UI
-		use({ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" })
+		use({
+			"weilbith/nvim-code-action-menu",
+			cmd = "CodeActionMenu",
+			config = function()
+				vim.g.code_action_menu_window_border = "single"
+			end,
+		})
 
 		-- lsp重构重命名组件
 		-- use({
