@@ -70,8 +70,10 @@ require("lualine").setup({
 		},
 	},
 	options = {
-		theme = "tokyonight",
+		theme = "Tomorrow",
 		component_separators = { left = "\\", right = "/" },
 		section_separators = { left = "", right = "" },
 	},
+    -- 扩展添加
+	extensions = { "quickfix", "nvim-tree", "toggleterm" },
 })

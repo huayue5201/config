@@ -17,20 +17,20 @@ require("sidebar-nvim").setup({
 	sections = { "symbols", "files", "diagnostics", "git" },
 	-- 代码大纲模块
 	symbols = {
-		icon = "ƒ",
+		icon = " ƒ",
 	},
 	-- 文件模块
 	files = {
-		icon = "",
+		icon = " ",
 		show_hidden = false,
 		ignored_paths = { "%.git$" },
 	},
 	-- Lsp诊断模块
 	["diagnostics"] = {
-		icon = "",
+		icon = " ",
 	},
 	-- git模块
 	["git"] = {
-		icon = "",
+		icon = " ",
 	},
 })

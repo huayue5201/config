@@ -50,7 +50,7 @@ require("nvim-treesitter.configs").setup({
 	},
 	-- 基于treesitter的缩进
 	indent = {
-		enable = true,
+		enable = false,
 	},
 	-- https://github.com/JoosepAlviste/nvim-ts-context-commentstring
 	-- 根据当前上下文定义文件类型，由 nvim-ts-context-commentstring 插件提供

@@ -23,7 +23,7 @@ vim.o.swapfile = false
 vim.o.undofile = true
 -- 当文件被外部程序修改时，自动加载
 vim.o.autoread = true
-vim.bo.autoread = true
+-- vim.bo.autoread = true
 -- 缩短更新时间
 vim.o.updatetime = 250
 vim.wo.signcolumn = "yes"

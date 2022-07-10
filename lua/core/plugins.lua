@@ -68,6 +68,10 @@ return require("packer").startup({
 			end,
 		})
 
+		-- https://github.com/antoinemadec/FixCursorHold.nvim
+		-- 解决一个nvovim的设计bug
+		use({ "antoinemadec/FixCursorHold.nvim" })
+
 		-- 多个插件依赖该模块(官方)
 		use({ "nvim-lua/plenary.nvim" })
 
@@ -87,10 +91,13 @@ return require("packer").startup({
 
 		-- 主题
 		use({
-			"folke/tokyonight.nvim",
+			"ray-x/aurora",
 			config = function()
-				vim.cmd([[colorscheme tokyonight]])
-				vim.g.tokyonight_lualine_bold = true
+				vim.cmd([[
+                let g:aurora_italic = 1" italic
+                let g:aurora_bold = 1" bold
+                colorscheme aurora
+                ]])
 			end,
 		})
 
@@ -102,13 +109,8 @@ return require("packer").startup({
 			end,
 		})
 
-		-- https://github.com/romgrk/barbar.nvim
-		-- TAB栏
+		-- Tab栏
 		use({ "romgrk/barbar.nvim" })
-
-		-- https://github.com/stevearc/dressing.nvim
-		-- input or select UI组件
-		use({ "stevearc/dressing.nvim" })
 
 		-- nvim输出消息的弹窗 UI
 		use({
@@ -173,6 +175,7 @@ return require("packer").startup({
 		-- tab键跳出括号,引号,上下文范围
 		use({
 			"abecodes/tabout.nvim",
+			event = "InsertEnter *",
 			config = function()
 				require("config.tabout")
 			end,
@@ -213,7 +216,7 @@ return require("packer").startup({
 		use({
 			"chentoast/marks.nvim",
 			config = function()
-				require("marks").setup()
+				require("config.marks")
 			end,
 		})
 
@@ -222,6 +225,14 @@ return require("packer").startup({
 			"lukas-reineke/indent-blankline.nvim",
 			config = function()
 				require("config.blankline")
+			end,
+		})
+
+		-- 自动缩进
+		use({
+			"Darazaki/indent-o-matic",
+			cofnig = function()
+				require("config.indent-o-matic")
 			end,
 		})
 
@@ -246,9 +257,14 @@ return require("packer").startup({
 			end,
 		})
 
-		-- https://github.com/machakann/vim-sandwich
-		-- 环绕符号 快捷键：sa添加 sd删除 sr替换
-		use({ "machakann/vim-sandwich" })
+		-- https://github.com/kylechui/nvim-surround
+		-- 环绕符号 快捷键：
+		use({
+			"kylechui/nvim-surround",
+			config = function()
+				require("config.nvim-surround")
+			end,
+		})
 
 		-- 颜色编码渲染
 		use({
@@ -270,8 +286,6 @@ return require("packer").startup({
 				{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 				-- AI算法
 				{ "nvim-telescope/telescope-frecency.nvim" },
-				-- dap组件
-				-- "nvim-telescope/telescope-dap.nvim"
 			},
 			config = function()
 				require("config.telescope")
@@ -305,6 +319,7 @@ return require("packer").startup({
 		-- 更好的浏览/?匹配结果
 		use({
 			"kevinhwang91/nvim-hlslens",
+			keys = { "/", "?" },
 			config = function()
 				require("config.hlslens")
 			end,
@@ -328,20 +343,26 @@ return require("packer").startup({
 		-- 代码操作标志💡
 		use({
 			"kosayoda/nvim-lightbulb",
-			-- https://github.com/antoinemadec/FixCursorHold.nvim
-			requires = "antoinemadec/FixCursorHold.nvim",
 			config = function()
 				require("config.nvim-lightbulb")
 			end,
 		})
 
-		-- 代码操作UI组件
+		-- 代码操作UI
 		use({ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" })
+
+		-- lsp重构重命名组件
+		-- use({
+		-- 	"smjonas/inc-rename.nvim",
+		-- 	config = function()
+		-- 		require("inc_rename").setup()
+		-- 	end,
+		-- })
 
 		-- 集成非LSP模块之外的诊断,格式化,代码操作功能
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
-			ft = { "go", "rust", "lua", "html" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			config = function()
 				require("config.null-ls")
 			end,
@@ -350,6 +371,7 @@ return require("packer").startup({
 		-- LSP 加载进度UI
 		use({
 			"j-hui/fidget.nvim",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			config = function()
 				require("config.fidget")
 			end,
@@ -373,7 +395,6 @@ return require("packer").startup({
 				{ "hrsh7th/cmp-path" }, -- 路径补全
 				{ "ray-x/cmp-treesitter" }, -- treesitter节点补全
 				{ "hrsh7th/cmp-buffer" }, -- 缓冲区补全
-				{ "f3fora/cmp-spell" }, -- 拼写建议
 				{ "rafamadriz/friendly-snippets" }, -- 提供多种语言的代码片段
 				{ "lukas-reineke/cmp-rg" }, -- rg补全提速
 			},
@@ -405,6 +426,16 @@ return require("packer").startup({
 		-- https://github.com/windwp/nvim-ts-autotag
 		-- 自动关闭和自动重命名html标签
 		use({ "windwp/nvim-ts-autotag", ft = "html" })
+
+		-- https://github.com/Saecki/crates.nvim
+		-- 帮助管理crates.io依赖项
+		use({
+			"saecki/crates.nvim",
+			event = { "BufRead Cargo.toml" },
+			config = function()
+				require("config.crates")
+			end,
+		})
 
 		-------------------------------移动----------------------------------
 		---------------------------------------------------------------------
@@ -442,6 +473,7 @@ return require("packer").startup({
 		-- 侧边栏
 		use({
 			"sidebar-nvim/sidebar.nvim",
+			cmd = "SidebarNvimToggle",
 			config = function()
 				require("config.sidebar")
 			end,
@@ -467,6 +499,7 @@ return require("packer").startup({
 		-- 终端
 		use({
 			"akinsho/toggleterm.nvim",
+			keys = "<c-\\>",
 			config = function()
 				require("config.toggleterm")
 			end,
@@ -507,7 +540,7 @@ return require("packer").startup({
 				require("config.neorg")
 			end,
 		})
-		--
+
 		------------------------------------------------------------|
 		-----------------| 插件书写在上面 |-------------------------|
 		------------------------------------------------------------|

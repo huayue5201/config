@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
--- 切屏
+-- 窗口切换
 vim.keymap.set("n", "<A-h>", "<C-w>h")
 vim.keymap.set("n", "<A-j>", "<C-w>j")
 vim.keymap.set("n", "<A-k>", "<C-w>k")
@@ -65,7 +65,7 @@ vim.keymap.set("n", "<leader>ts", ":SidebarNvimToggle<cr>")
 -- 查看全部标签
 vim.keymap.set("n", "<leader>bk", "<cmd>MarksQFListAll<cr>")
 -- telescope搜索标签
-vim.keymap.set("n", "<leader>bf", require("telescope.builtin").marks)
+vim.keymap.set("n", "<leader>fm", require("telescope.builtin").marks)
 
 -- TODO管理
 vim.keymap.set("n", "<leader>to", ":TodoTelescope<cr>")
@@ -78,7 +78,7 @@ vim.keymap.set("n", "<leader>te", "<cmd>NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>ts", "<cmd>SidebarNvimToggle<CR>")
 
 -- 格式化代码
-vim.keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>")
+vim.keymap.set("n", "<leader>bf", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>")
 
 -- notify显示历史弹窗记录
 vim.keymap.set("n", "<leader>tn", "<cmd>lua require('telescope').extensions.notify.notify()<CR>")

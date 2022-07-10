@@ -2,6 +2,10 @@
 
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
+	git = {
+		-- 不显示git图标
+		enable = false,
+	},
 	view = {
 		-- 自适应大小
 		adaptive_size = true,
@@ -18,6 +22,12 @@ require("nvim-tree").setup({
 		-- 位置
 		side = "right",
 	},
+	actions = {
+		open_file = {
+			-- 打开文件关闭
+			quit_on_open = true,
+		},
+	},
 	renderer = {
 		add_trailing = true,
 		group_empty = true,
@@ -32,6 +42,9 @@ require("nvim-tree").setup({
 				none = "  ",
 			},
 		},
+	},
+	system_open = {
+		cmd = "wsl-open",
 	},
 	diagnostics = {
 		enable = true,
