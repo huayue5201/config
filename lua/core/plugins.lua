@@ -89,6 +89,7 @@ return require("packer").startup({
 		---------------------------UI 视觉-----------------------------
 		---------------------------------------------------------------
 
+		-- https://github.com/ray-x/aurora
 		-- 主题
 		use({
 			"ray-x/aurora",
@@ -390,24 +391,19 @@ return require("packer").startup({
 		-----------------------------补全-----------------------------
 		--------------------------------------------------------------
 
-		-- cmp补全
+		-- coq补全引擎
 		use({
-			"hrsh7th/nvim-cmp", -- 代码补全核心插件
+			"ms-jpq/coq_nvim",
+			run = "python3 -m coq deps",
 			requires = {
-				{ "hrsh7th/vim-vsnip" }, -- vsnip 引擎，用于获得代码片段支持
-				{ "hrsh7th/cmp-vsnip" }, -- 适用于 vsnip 的代码片段源
-				{ "hrsh7th/cmp-nvim-lsp" }, -- LSP源
-				{ "hrsh7th/cmp-nvim-lsp-signature-help" }, -- 函数签名
-				{ "hrsh7th/cmp-path" }, -- 路径补全
-				{ "ray-x/cmp-treesitter" }, -- treesitter节点补全
-				{ "hrsh7th/cmp-buffer" }, -- 缓冲区补全
-				{ "rafamadriz/friendly-snippets" }, -- 提供多种语言的代码片段
-				{ "lukas-reineke/cmp-rg" }, -- rg补全提速
+				{ "ms-jpq/coq.artifacts" },
+				{ "ms-jpq/coq.thirdparty" },
 			},
-			config = function()
-				require("config.nvim-cmp")
-			end,
 		})
+
+		-- https://github.com/ray-x/lsp_signature.nvim
+		-- 签名帮助
+		use({ "ray-x/lsp_signature.nvim" })
 
 		-- 括号补全
 		use({

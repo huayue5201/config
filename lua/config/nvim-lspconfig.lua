@@ -2,8 +2,10 @@
 -- Lsp支持列表
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
--- hrsh7th/nvim-cmp集成
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local lspconfig = require("lspconfig")
+
+-- Automatically start coq
+vim.g.coq_settings = { auto_start = "shut-up" }
 
 -- LSP按键设置
 ---------------------------------------------------------------------
@@ -46,6 +48,8 @@ local on_attach = function(client, bufnr)
 		})
 	end
 
+	-- ray-x/lsp_signature.nvim
+	require("lsp_signature").on_attach()
 	-- https://github.com/SmiteshP/nvim-navic
 	require("nvim-navic").attach(client, bufnr)
 	-- https://github.com/stevearc/aerial.nvim
@@ -86,6 +90,16 @@ local on_attach = function(client, bufnr)
 	-- vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
 end
 
+-- Enable some language servers with the additional completion capabilities offered by coq_nvim
+
+local servers = { "sumneko_lua", "rust_analyzer", "tsserver", "taplo" }
+-- coq补全框架
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup(require("coq").lsp_ensure_capabilities({
+		on_attach = on_attach,
+	}))
+end
+
 -- Lsp服务器加载
 ---------------------------------------------------------------------
 -- https://github.com/simrat39/rust-tools.nvim
@@ -103,7 +117,6 @@ require("rust-tools").setup({
 	-- rust-analyer options
 	server = {
 		on_attach = on_attach,
-		capabilities = capabilities,
 		standalone = true,
 	}, -- rust-analyer options
 	dap = {
@@ -115,21 +128,18 @@ require("rust-tools").setup({
 -- lua lsp
 require("lspconfig").sumneko_lua.setup({
 	on_attach = on_attach,
-	capabilities = capabilities,
 })
 
 -- https://github.com/typescript-language-server/typescript-language-server
 -- typescript lsp
 require("lspconfig")["tsserver"].setup({
 	on_attach = on_attach,
-	capabilities = capabilities,
 })
 
 -- https://taplo.tamasfe.dev/cli/installation/cargo.html
--- tmol lsp 
+-- tmol lsp
 require("lspconfig").taplo.setup({
 	on_attach = on_attach,
-	capabilities = capabilities,
 })
 ---------------------------------------------------------------------
 

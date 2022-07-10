@@ -72,7 +72,7 @@ vim.keymap.set("n", "<leader>to", ":TodoTelescope<cr>")
 
 -- tree文件树按键映射
 -- 打开or关闭
-vim.keymap.set("n", "<leader>te", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>fe", "<cmd>NvimTreeToggle<CR>")
 
 -- 侧边栏
 vim.keymap.set("n", "<leader>ts", "<cmd>SidebarNvimToggle<CR>")
