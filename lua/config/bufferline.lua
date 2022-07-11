@@ -6,13 +6,13 @@ require("bufferline").setup({
 		offsets = {
 			{
 				filetype = "NvimTree",
-				text = "  File Explorer",
+				text = " File Explorer",
 				highlight = "Directory",
 				text_align = "left",
 			},
 			{
 				filetype = "SidebarNvim",
-				text = "  Sidebar",
+				text = " Sidebar",
 				highlight = "Directory",
 				text_align = "left",
 			},

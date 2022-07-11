@@ -417,6 +417,7 @@ return require("packer").startup({
 		-- 括号补全
 		use({
 			"windwp/nvim-autopairs",
+			event = "InsertEnter *",
 			config = function()
 				require("config.nvim-autopairs")
 			end,
@@ -463,6 +464,7 @@ return require("packer").startup({
 		-- 光标快速跳转
 		use({
 			"ggandor/leap.nvim",
+			keys = { "f", "t" },
 			requires = { "tpope/vim-repeat" },
 			config = function()
 				require("config.leap")
@@ -520,6 +522,7 @@ return require("packer").startup({
 		-- 翻译插件
 		use({
 			"uga-rosa/translate.nvim",
+			keys = "<leader>tl",
 			config = function()
 				require("config.translate")
 			end,
