@@ -111,7 +111,16 @@ return require("packer").startup({
 		})
 
 		-- Tab栏
-		use({ "romgrk/barbar.nvim" })
+		use({
+			"akinsho/bufferline.nvim",
+			-- https://github.com/famiu/bufdelete.nvim
+			-- 删除缓冲区不打乱布局
+			requires = { "famiu/bufdelete.nvim" },
+			tag = "v2.*",
+			config = function()
+				require("config.bufferline")
+			end,
+		})
 
 		-- nvim输出消息的弹窗 UI
 		use({
@@ -200,6 +209,7 @@ return require("packer").startup({
 		-- 和J拼接反向操作
 		use({
 			"AckslD/nvim-trevJ.lua",
+			keys = "<leader>j",
 			config = function()
 				require("config.nvim-trevJ")
 			end,
@@ -320,7 +330,6 @@ return require("packer").startup({
 		-- 更好的浏览/?匹配结果
 		use({
 			"kevinhwang91/nvim-hlslens",
-			keys = { "/", "?" },
 			config = function()
 				require("config.hlslens")
 			end,
@@ -416,6 +425,7 @@ return require("packer").startup({
 		-- 命令模式补全
 		use({
 			"gelguy/wilder.nvim",
+			keys = { "/", "?", ":" },
 			requires = {
 				-- https://github.com/romgrk/fzy-lua-native
 				{ "romgrk/fzy-lua-native" },

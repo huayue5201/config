@@ -18,11 +18,11 @@ vim.keymap.set("n", "<A-k>", "<C-w>k")
 vim.keymap.set("n", "<A-l>", "<C-w>l")
 
 -- 关闭当前buffer
-vim.keymap.set("n", "<C-q>", "<cmd>BufferClose<CR>")
+vim.keymap.set("n", "<C-q>", "<cmd>Bdelete<CR>")
 -- 切换到下一个buffer
-vim.keymap.set("n", "<TAB>", "<cmd>BufferPrevious<CR>")
+vim.keymap.set("n", "<TAB>", "<cmd>BufferLineCycleNext<CR>")
 -- 切换到上一个buffer
-vim.keymap.set("n", "<S-TAB>", "<cmd>BufferNext<CR>")
+vim.keymap.set("n", "<S-TAB>", "<cmd>BufferLineCyclePrev<CR>")
 
 -- 一键全选
 vim.keymap.set("n", "<leader>gg", "ggVG")
