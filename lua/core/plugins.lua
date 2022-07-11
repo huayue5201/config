@@ -182,15 +182,6 @@ return require("packer").startup({
 		-- 彩虹括号(依赖treesitter)
 		use({ "p00f/nvim-ts-rainbow" })
 
-		-- tab键跳出括号,引号,上下文范围
-		use({
-			"abecodes/tabout.nvim",
-			event = "InsertEnter *",
-			config = function()
-				require("config.tabout")
-			end,
-		})
-
 		-- 突出显示匹配符号并提供额外的操作符
 		-- https://github.com/andymass/vim-matchup/
 		use({

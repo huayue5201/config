@@ -4,9 +4,18 @@
 local remap = vim.api.nvim_set_keymap
 local npairs = require("nvim-autopairs")
 
-
 -- coq集成
-npairs.setup({ map_bs = false, map_cr = false })
+npairs.setup({
+	map_bs = false,
+	map_cr = false,
+	check_ts = true,
+	-- treesitter集成
+	ts_config = {
+		lua = { "string" }, -- it will not add a pair on that treesitter node
+		javascript = { "template_string" },
+		java = false, -- don't check treesitter on java
+	},
+})
 
 vim.g.coq_settings = { keymap = { recommended = false } }
 
@@ -40,23 +49,3 @@ MUtils.BS = function()
 	end
 end
 remap("i", "<bs>", "v:lua.MUtils.BS()", { expr = true, noremap = true })
-
--- treesitter集成
-npairs.setup({
-    check_ts = true,
-    ts_config = {
-        lua = {'string'},-- it will not add a pair on that treesitter node
-        javascript = {'template_string'},
-        java = false,-- don't check treesitter on java
-    }
-})
-
-local ts_conds = require('nvim-autopairs.ts-conds')
-
--- press % => %% only while inside a comment or string
-npairs.add_rules({
-  Rule("%", "%", "lua")
-    :with_pair(ts_conds.is_ts_node({'string','comment'})),
-  Rule("$", "$", "lua")
-    :with_pair(ts_conds.is_not_ts_node({'function'}))
-})
