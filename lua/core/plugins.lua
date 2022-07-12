@@ -92,12 +92,14 @@ return require("packer").startup({
 		-- https://github.com/ray-x/aurora
 		-- 主题
 		use({
-			"ray-x/aurora",
+			-- "ray-x/aurora",
+			"Mofiqul/dracula.nvim",
 			config = function()
 				vim.cmd([[
-                let g:aurora_italic = 1" italic
-                let g:aurora_bold = 1" bold
-                colorscheme aurora
+				colorscheme dracula
+                " let g:aurora_italic = 1" italic
+                " let g:aurora_bold = 1" bold
+                " colorscheme aurora
                 ]])
 			end,
 		})
@@ -366,6 +368,10 @@ return require("packer").startup({
 		-- 	end,
 		-- })
 
+		-- https://github.com/ray-x/lsp_signature.nvim
+		-- 签名帮助
+		use({ "ray-x/lsp_signature.nvim" })
+
 		-- 集成非LSP模块之外的诊断,格式化,代码操作功能
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
@@ -409,10 +415,6 @@ return require("packer").startup({
 				{ "ms-jpq/coq.thirdparty" },
 			},
 		})
-
-		-- https://github.com/ray-x/lsp_signature.nvim
-		-- 签名帮助
-		use({ "ray-x/lsp_signature.nvim" })
 
 		-- 括号补全
 		use({
