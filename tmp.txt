@@ -301,3 +301,104 @@ times in msec
 147.850  000.002: before starting main loop
 155.614  007.764: first screen update
 155.619  000.006: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.010  000.010: --- NVIM STARTING ---
+000.248  000.238: locale set
+000.495  000.246: inits 1
+000.506  000.012: window checked
+000.509  000.003: parsing arguments
+002.225  001.716: init lua interpreter
+002.464  000.239: expanding arguments
+002.486  000.022: inits 2
+002.795  000.308: init highlight
+002.796  000.002: waiting for UI
+003.572  000.776: done waiting for UI
+003.589  000.017: init screen for UI
+003.607  000.018: init default mappings
+003.641  000.035: init default autocommands
+004.689  000.049  000.049: sourcing /usr/share/nvim/runtime/ftplugin.vim
+004.885  000.044  000.044: sourcing /usr/share/nvim/runtime/indent.vim
+004.940  000.011  000.011: sourcing /usr/share/nvim/archlinux.vim
+004.943  000.031  000.020: sourcing /etc/xdg/nvim/sysinit.vim
+007.451  000.159  000.159: sourcing /usr/share/nvim/runtime/pack/dist/opt/vimball/plugin/vimballPlugin.vim
+034.170  029.210  029.050: sourcing /home/huayue520/.config/nvim/init.lua
+034.191  001.216: sourcing vimrc file(s)
+034.346  000.047  000.047: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/filetype.nvim/filetype.vim
+034.717  000.065  000.065: sourcing /usr/share/nvim/runtime/filetype.lua
+034.752  000.016  000.016: sourcing /usr/share/nvim/runtime/filetype.vim
+035.064  000.080  000.080: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+035.160  000.361  000.280: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+036.069  000.014  000.014: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+036.098  000.010  000.010: sourcing /usr/share/nvim/runtime/plugin/health.vim
+036.140  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/man.vim
+036.165  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+036.189  000.010  000.010: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+036.216  000.013  000.013: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+036.237  000.007  000.007: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+036.258  000.007  000.007: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+036.282  000.008  000.008: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+036.307  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+036.328  000.008  000.008: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+036.349  000.007  000.007: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+036.374  000.012  000.012: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+036.437  000.013  000.013: sourcing /usr/share/nvim/runtime/pack/dist/opt/vimball/plugin/vimballPlugin.vim
+036.939  000.453  000.453: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+112.489  004.074  004.074: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/dracula.nvim/colors/dracula.lua
+122.748  000.019  000.019: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/opt/neorg/ftdetect/norg.vim
+122.907  085.895  081.802: sourcing /home/huayue520/.config/nvim/plugin/packer_compiled.lua
+123.334  002.147: loading rtp plugins
+123.875  000.089  000.089: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim/plugin/fix_cursorhold_nvim.vim
+124.036  000.046  000.046: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/bufdelete.nvim/plugin/bufdelete.vim
+124.159  000.005  000.005: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/coq.artifacts/plugin/coq.artifacts.vim
+124.240  000.006  000.006: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/coq.thirdparty/plugin/coq_3p.vim
+124.337  000.022  000.022: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/coq_nvim/plugin/coq.vim
+124.463  000.014  000.014: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/fzf/plugin/fzf.vim
+124.886  000.313  000.313: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/plugin/indent_blankline.vim
+125.002  000.021  000.021: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/indent-o-matic/plugin/indent-o-matic.vim
+125.526  000.396  000.396: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/marks.nvim/plugin/marks.vim
+125.769  000.150  000.150: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-hlslens/plugin/hlslens.vim
+125.963  000.068  000.068: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+127.110  000.954  000.954: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
+128.697  001.507  001.507: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
+128.869  000.065  000.065: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
+129.153  000.164  000.164: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow/plugin/rainbow.vim
+129.279  000.040  000.040: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+129.413  000.035  000.035: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+129.561  000.013  000.013: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/rust-tools.nvim/plugin/rust-tools.vim
+129.697  000.024  000.024: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/telescope-frecency.nvim/plugin/frecency.vim
+130.173  000.356  000.356: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
+130.269  000.023  000.023: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/todo-comments.nvim/plugin/todo.vim
+130.565  000.012  000.012: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+130.870  000.134  000.134: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+131.239  000.184  000.184: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup.vim
+131.472  000.078  000.078: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/perf.vim
+132.250  000.447  000.447: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/loader.vim
+134.119  001.648  001.648: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/matchparen.vim
+134.471  000.080  000.080: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/pos.vim
+135.808  005.461  002.880: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-matchup/plugin/matchup.vim
+136.383  000.137  000.137: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-visual-multi/autoload/vm/plugs.vim
+137.001  000.225  000.225: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-visual-multi/autoload/vm/maps.vim
+137.279  000.093  000.093: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-visual-multi/autoload/vm/maps/all.vim
+138.286  002.285  001.829: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-visual-multi/plugin/visual-multi.vim
+138.473  000.086  000.086: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/yanky.nvim/plugin/yanky.vim
+138.572  003.094: loading packages
+138.653  000.007  000.007: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-matchup/after/plugin/matchit.vim
+138.825  000.118  000.118: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/Comment.nvim/after/plugin/Comment.lua
+138.882  000.184: loading after plugins
+138.895  000.014: inits 3
+141.055  002.159: reading ShaDa
+143.030  000.087  000.087: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/ts_engine.vim
+144.784  000.024  000.024: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/re.vim
+144.975  003.809: opening buffers
+145.347  000.372: BufEnter autocommands
+145.376  000.029: editing files in windows
+147.678  002.301: VimEnter autocommands
+147.685  000.007: UIEnter autocommands
+147.688  000.003: before starting main loop
+155.819  008.132: first screen update
+155.825  000.005: --- NVIM STARTED ---

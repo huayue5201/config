@@ -351,6 +351,7 @@ return require("packer").startup({
 		-- 代码操作UI
 		use({
 			"weilbith/nvim-code-action-menu",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			cmd = "CodeActionMenu",
 			config = function()
 				vim.g.code_action_menu_window_border = "single"
