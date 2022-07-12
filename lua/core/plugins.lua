@@ -388,6 +388,15 @@ return require("packer").startup({
 		-- 一个简单的状态栏/winbar 组件，它使用 LSP 来显示您当前的代码上下文
 		use({ "SmiteshP/nvim-navic" })
 
+		-- 更好的折叠机制
+		use({
+			"kevinhwang91/nvim-ufo",
+			requires = "kevinhwang91/promise-async",
+			config = function()
+				require("config.nvim-ufo")
+			end,
+		})
+
 		-----------------------------补全-----------------------------
 		--------------------------------------------------------------
 

@@ -52,3 +52,7 @@ vim.o.list = true
 vim.opt.listchars:append("space:⋅")
 -- 边栏空一格显示符号
 vim.wo.signcolumn = "yes"
+-- -- 默认不要折叠
+vim.wo.foldlevel = 99
+
+
