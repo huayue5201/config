@@ -189,12 +189,15 @@ return require("packer").startup({
 		use({
 			"andymass/vim-matchup",
 			config = function()
+				vim.g.matchup_surround_enabled = 0 -- 启用匹配符号删改操作
+				vim.g.matchup_delim_noskips = 1 -- recognize symbols within comments
+				vim.g.matchup_delim_noskips = 2 -- don't recognize anything in comments
+				vim.g.matchup_matchparen_deferred = 1 -- 延时突出显示，提高光标移动性能
+				-- -- 突出显示周围符号
+				-- vim.g.matchup_matchparen_deferred = 1
+				-- vim.g.matchup_matchparen_hi_surround_always = 1
 				vim.cmd([[
                 let g:matchup_matchparen_offscreen = {'method': 'popup'}
-                let g:matchup_surround_enabled = 1 " 启用匹配符号删改操作
-                let g:matchup_delim_noskips = 1   " recognize symbols within comments
-                let g:matchup_delim_noskips = 2   " don't recognize anything in comments
-                let g:matchup_matchparen_deferred = 1 "延时突出显示，提高光标移动性能
                 ]])
 			end,
 		})
@@ -328,6 +331,14 @@ return require("packer").startup({
 			end,
 		})
 
+		-- 项目书签
+		-- use({
+		-- 	"ThePrimeagen/harpoon",
+		-- 	config = function()
+		-- 		require("config.harpoon")
+		-- 	end,
+		-- })
+
 		------------------------------LSP相关-------------------------------
 		--------------------------------------------------------------------
 
@@ -406,6 +417,7 @@ return require("packer").startup({
 		-----------------------------补全-----------------------------
 		--------------------------------------------------------------
 
+		-- https://github.com/ms-jpq/coq_nvim/blob/coq/docs/DISPLAY.md
 		-- coq补全引擎
 		use({
 			"ms-jpq/coq_nvim",

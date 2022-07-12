@@ -11,7 +11,7 @@ null_ls.setup({
 
 		-- https://github.com/rust-lang/rustfmt
 		-- rust格式化
-		null_ls.builtins.formatting.rustfmt,
+		-- null_ls.builtins.formatting.rustfmt,
 
 		-- https://github.com/JohnnyMorganz/StyLua
 		-- lua格式化软件,由stylua提供方法
