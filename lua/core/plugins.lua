@@ -146,7 +146,7 @@ return require("packer").startup({
 		-- 美化quickfix lsp诊断内容
 		use({
 			"https://gitlab.com/yorickpeterse/nvim-pqf.git",
-			ft = "qf",
+			-- ft = "qf",
 			config = function()
 				require("config.bqf")
 			end,
