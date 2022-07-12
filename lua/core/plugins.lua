@@ -92,14 +92,10 @@ return require("packer").startup({
 		-- https://github.com/ray-x/aurora
 		-- 主题
 		use({
-			-- "ray-x/aurora",
 			"Mofiqul/dracula.nvim",
 			config = function()
 				vim.cmd([[
 				colorscheme dracula
-                " let g:aurora_italic = 1" italic
-                " let g:aurora_bold = 1" bold
-                " colorscheme aurora
                 ]])
 			end,
 		})
@@ -150,6 +146,7 @@ return require("packer").startup({
 		-- 美化quickfix lsp诊断内容
 		use({
 			"https://gitlab.com/yorickpeterse/nvim-pqf.git",
+			ft = "qf",
 			config = function()
 				require("config.bqf")
 			end,
@@ -169,17 +166,6 @@ return require("packer").startup({
 
 		-- 基于treesitter的文本操作模块(官方)
 		use({ "nvim-treesitter/nvim-treesitter-textobjects" })
-
-		-- Treesitter驱动的拼写检查器
-		use({
-			"lewis6991/spellsitter.nvim",
-			config = function()
-				require("spellsitter").setup({
-					-- Whether enabled, can be a list of filetypes, e.g. {'python', 'lua'}
-					enable = true,
-				})
-			end,
-		})
 
 		-- 彩虹括号(依赖treesitter)
 		use({ "p00f/nvim-ts-rainbow" })
@@ -381,7 +367,10 @@ return require("packer").startup({
 
 		-- https://github.com/ray-x/lsp_signature.nvim
 		-- 签名帮助
-		use({ "ray-x/lsp_signature.nvim" })
+		use({
+			"ray-x/lsp_signature.nvim",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+		})
 
 		-- 集成非LSP模块之外的诊断,格式化,代码操作功能
 		use({
@@ -408,6 +397,7 @@ return require("packer").startup({
 		-- 更好的折叠机制
 		use({
 			"kevinhwang91/nvim-ufo",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			requires = "kevinhwang91/promise-async",
 			config = function()
 				require("config.nvim-ufo")
@@ -490,6 +480,7 @@ return require("packer").startup({
 		--Debug组件
 		use({
 			"mfussenegger/nvim-dap",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			config = function()
 				require("config.nvim-dap")
 			end,
@@ -554,6 +545,7 @@ return require("packer").startup({
 		-- 映射/命令辅助器,降低记忆负担
 		use({
 			"folke/which-key.nvim",
+			keys = "<leader>",
 			config = function()
 				require("config.which-key")
 			end,
