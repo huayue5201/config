@@ -119,8 +119,8 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 -- -- 开启 Folding
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.wo.foldmethod = "expr"
+-- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 -- :TSBufEnable {module}  当前缓冲区启用模块
 -- :TSBufDisable {module} 当前缓冲区禁用模块
 -- :TSEnable {module} [{ft}] " enable module on every buffer. If filetype is specified, enable only for this filetype.
