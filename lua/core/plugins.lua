@@ -59,6 +59,11 @@ return require("packer").startup({
 		-----------------| 插件书写在下面 |-------------------------|
 		------------------------------------------------------------|
 
+		-- WARN::新加载插件需要把init.lua第一行注释掉,
+		--https://github.com/lewis6991/impatient.nvim
+		-- 加快启动时间
+		use({ "lewis6991/impatient.nvim" })
+
 		-- https://github.com/nathom/filetype.nvim
 		-- 该插件加快启动速度
 		use({
@@ -547,17 +552,6 @@ return require("packer").startup({
 			-- keys = "<leader>",
 			config = function()
 				require("config.which-key")
-			end,
-		})
-
-		-- neorg文本格式(官方)
-		use({
-			"nvim-neorg/neorg",
-			tag = "*",
-			ft = "norg", -- WARN:设置延迟加载会导致打开.norg文件变慢!
-			after = "nvim-treesitter", -- -- You may want to specify Telescope here as well
-			config = function()
-				require("config.neorg")
 			end,
 		})
 

@@ -3,7 +3,7 @@
 -- treesitter配置
 require("nvim-treesitter.configs").setup({
 	-- 安装的语法解析器
-	ensure_installed = { "lua", "vim", "go", "norg", "yaml", "rust", "html", "css", "toml", "javascript" },
+	ensure_installed = { "lua", "vim", "go", "yaml", "rust", "html", "css", "toml", "javascript" },
 	-- 同步安装解析器
 	sync_install = true,
 	-- 高亮模块启用与配置
