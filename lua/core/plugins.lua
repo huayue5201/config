@@ -549,7 +549,7 @@ return require("packer").startup({
 		-- 映射/命令辅助器,降低记忆负担
 		use({
 			"folke/which-key.nvim",
-			-- keys = "<leader>",
+			keys = { "<leader>", '"', "'" },
 			config = function()
 				require("config.which-key")
 			end,
