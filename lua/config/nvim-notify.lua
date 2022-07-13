@@ -1,5 +1,9 @@
 -- https://github.com/rcarriga/nvim-notify
 -- nvim-notify消息弹窗UI
+
+local async = require("plenary.async")
+local notify = require("notify").async
+
 require("notify").setup({
 	notify_opts = {
 		-- 动画样式
