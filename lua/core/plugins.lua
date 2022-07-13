@@ -146,7 +146,6 @@ return require("packer").startup({
 		-- 美化quickfix lsp诊断内容
 		use({
 			"https://gitlab.com/yorickpeterse/nvim-pqf.git",
-			-- ft = "qf",
 			config = function()
 				require("config.bqf")
 			end,
@@ -216,6 +215,7 @@ return require("packer").startup({
 		-- 显示缩进线
 		use({
 			"lukas-reineke/indent-blankline.nvim",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			config = function()
 				require("config.blankline")
 			end,
@@ -484,6 +484,16 @@ return require("packer").startup({
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			config = function()
 				require("config.nvim-dap")
+			end,
+		})
+
+		-- 一键运行代码
+		use({
+			"michaelb/sniprun",
+			run = "bash ./install.sh",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			config = function()
+				require("config.sniprun")
 			end,
 		})
 
