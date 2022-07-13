@@ -235,14 +235,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- 增强复制粘贴功能
-		use({
-			"gbprod/yanky.nvim",
-			config = function()
-				require("config.yanky")
-			end,
-		})
-
 		-- https://github.com/kylechui/nvim-surround
 		-- 环绕符号 快捷键：
 		use({
@@ -543,15 +535,6 @@ return require("packer").startup({
 			tag = "release", -- To use the latest release
 			config = function()
 				require("config.gitsigns")
-			end,
-		})
-
-		-- 映射/命令辅助器,降低记忆负担
-		use({
-			"folke/which-key.nvim",
-			keys = { "<leader>", '"', "'" },
-			config = function()
-				require("config.which-key")
 			end,
 		})
 

@@ -41,13 +41,13 @@ vim.cmd([[
     \ endif
 ]])
 
--- -- yy高亮复制范围
--- vim.cmd([[
---   augroup YankHighlight
---   autocmd!
---   autocmd TextYankPost * silent! lua vim.highlight.on_yank()
---   augroup end
---  ]])
+-- yy高亮复制范围
+vim.cmd([[
+  augroup YankHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+ ]])
 
 -- Packer自动运行PackerCompile命令
 vim.cmd([[
