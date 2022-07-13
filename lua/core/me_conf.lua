@@ -1,5 +1,5 @@
 -- 禁用自带插件，节省启动时间
-vim.g.loaded_matchparen = 1 -- 高亮括号
+vim.g.loaded_matchparen = 1
 vim.g.loaded_matchit = 1
 vim.g.loaded_logiPat = 1
 vim.g.loaded_rrhelper = 1

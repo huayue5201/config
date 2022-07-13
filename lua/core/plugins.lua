@@ -174,16 +174,13 @@ return require("packer").startup({
 		use({
 			"andymass/vim-matchup",
 			config = function()
-				vim.g.matchup_surround_enabled = 0 -- 启用匹配符号删改操作
+				vim.g.matchup_surround_enabled = 0 -- 禁用符号删改操作（1启用）
 				vim.g.matchup_delim_noskips = 1 -- recognize symbols within comments
 				vim.g.matchup_delim_noskips = 2 -- don't recognize anything in comments
 				vim.g.matchup_matchparen_deferred = 1 -- 延时突出显示，提高光标移动性能
 				-- -- 突出显示周围符号
 				-- vim.g.matchup_matchparen_deferred = 1
 				-- vim.g.matchup_matchparen_hi_surround_always = 1
-				vim.cmd([[
-                let g:matchup_matchparen_offscreen = {'method': 'popup'}
-                ]])
 			end,
 		})
 
@@ -202,15 +199,6 @@ return require("packer").startup({
 		-- https://github.com/mg979/vim-visual-multi
 		-- 多光标
 		use({ "mg979/vim-visual-multi" })
-
-		-- https://github.com/chentoast/marks.nvim
-		--marks
-		use({
-			"chentoast/marks.nvim",
-			config = function()
-				require("config.marks")
-			end,
-		})
 
 		-- 显示缩进线
 		use({
@@ -556,7 +544,7 @@ return require("packer").startup({
 		-- 映射/命令辅助器,降低记忆负担
 		use({
 			"folke/which-key.nvim",
-			keys = "<leader>",
+			-- keys = "<leader>",
 			config = function()
 				require("config.which-key")
 			end,
