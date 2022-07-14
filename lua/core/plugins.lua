@@ -94,11 +94,12 @@ return require("packer").startup({
 		---------------------------UI 视觉-----------------------------
 		---------------------------------------------------------------
 
-		-- https://github.com/ray-x/aurora
+		--
 		-- 主题
 		use({
 			"Mofiqul/dracula.nvim",
 			config = function()
+				vim.g.dracula_lualine_bg_color = "#4B0082"
 				vim.cmd([[
 				colorscheme dracula
                 ]])
@@ -203,7 +204,10 @@ return require("packer").startup({
 
 		-- https://github.com/mg979/vim-visual-multi
 		-- 多光标
-		use({ "mg979/vim-visual-multi" })
+		use({
+			"mg979/vim-visual-multi",
+			keys = { "<c-n>", "<c-Down>", "<c-Up>", "<s-Up>", "<s-Down>", "<s-Left>", "<s-Right>" },
+		})
 
 		-- 显示缩进线
 		use({
@@ -332,6 +336,8 @@ return require("packer").startup({
 		-- 代码操作标志💡
 		use({
 			"kosayoda/nvim-lightbulb",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			requires = "antoinemadec/FixCursorHold.nvim",
 			config = function()
 				require("config.nvim-lightbulb")
 			end,
