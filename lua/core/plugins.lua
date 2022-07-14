@@ -277,6 +277,37 @@ return require("packer").startup({
 			end,
 		})
 
+		-------------------------------移动----------------------------------
+		---------------------------------------------------------------------
+
+		-- tab跳出符号包围
+		use({
+			"abecodes/tabout.nvim",
+			wants = { "nvim-treesitter" }, -- or require if not used so far
+			after = { "coq_nvim" }, -- if a completion plugin is using tabs load it before
+			config = function()
+				require("config.tabout")
+			end,
+		})
+
+		-- 平滑滚动
+		use({
+			"declancm/cinnamon.nvim",
+			config = function()
+				require("config.cinnamon")
+			end,
+		})
+
+		-- 光标快速跳转
+		use({
+			"ggandor/leap.nvim",
+			keys = { "f", "t" },
+			requires = { "tpope/vim-repeat" },
+			config = function()
+				require("config.leap")
+			end,
+		})
+
 		----------------------------telescope相关--------------------------
 		-------------------------------------------------------------------
 
@@ -430,7 +461,7 @@ return require("packer").startup({
 		-- coq补全引擎
 		use({
 			"ms-jpq/coq_nvim",
-			after = { "nvim-lspconfig" },
+			-- after = { "nvim-lspconfig" },
 			run = "python3 -m coq deps",
 			requires = {
 				{ "ms-jpq/coq.artifacts" },
@@ -474,26 +505,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-------------------------------移动----------------------------------
-		---------------------------------------------------------------------
-
-		-- 平滑滚动
-		use({
-			"declancm/cinnamon.nvim",
-			config = function()
-				require("config.cinnamon")
-			end,
-		})
-
-		-- 光标快速跳转
-		use({
-			"ggandor/leap.nvim",
-			keys = { "f", "t" },
-			requires = { "tpope/vim-repeat" },
-			config = function()
-				require("config.leap")
-			end,
-		})
 		------------------------------- 代码测试 ----------------------------
 		---------------------------------------------------------------------
 
