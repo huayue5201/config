@@ -433,6 +433,7 @@ return require("packer").startup({
 			"ms-jpq/coq_nvim",
 			run = "python3 -m coq deps",
 			after = { "nvim-lspconfig" },
+			event = "InsertEnter *",
 			requires = {
 				{ "ms-jpq/coq.artifacts" },
 				{ "ms-jpq/coq.thirdparty" },
