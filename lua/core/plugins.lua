@@ -225,6 +225,8 @@ return require("packer").startup({
 		-- 代码注释
 		use({
 			"numToStr/Comment.nvim",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			keys = { "gc", "gb", "gcc", "gbc", "gc0", "gco", "gcA" },
 			requires = {
 				-- https://github.com/JoosepAlviste/nvim-ts-context-commentstring
 				-- 根据上下文提供不同的注释方案
@@ -239,6 +241,8 @@ return require("packer").startup({
 		-- 环绕符号 快捷键：
 		use({
 			"kylechui/nvim-surround",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			keys = { "ys", "yss", "cs", "ds", "V" },
 			config = function()
 				require("config.nvim-surround")
 			end,
@@ -384,6 +388,7 @@ return require("packer").startup({
 		use({
 			"kevinhwang91/nvim-ufo",
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			keys = { "zR", "zM" },
 			requires = "kevinhwang91/promise-async",
 			config = function()
 				require("config.nvim-ufo")
@@ -477,6 +482,7 @@ return require("packer").startup({
 			"michaelb/sniprun",
 			run = "bash ./install.sh",
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			cmd = { "SnipRun", "SnipRunOperator", "SnipClose", "SnipReset" },
 			config = function()
 				require("config.sniprun")
 			end,
