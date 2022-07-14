@@ -10,5 +10,5 @@ require("harpoon").setup({
 vim.cmd([[
 nnoremap <silent><leader>a :lua require("harpoon.mark").add_file()<CR>
 nnoremap <silent><leader>tc :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <silent><leader>tr :lua require("harpoon.tmux").sendCommand(1, "cargo run")<CR>
+nnoremap <silent><leader>cr :lua require("harpoon.tmux").sendCommand(1, "cargo run")<CR>
 ]])
