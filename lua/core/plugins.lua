@@ -179,6 +179,8 @@ return require("packer").startup({
 		-- https://github.com/andymass/vim-matchup/
 		use({
 			"andymass/vim-matchup",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			event = "InsertEnter *",
 			config = function()
 				vim.g.matchup_surround_enabled = 0 -- 禁用符号删改操作（1启用）
 				vim.g.matchup_delim_noskips = 1 -- recognize symbols within comments
@@ -366,6 +368,7 @@ return require("packer").startup({
 		use({
 			"ray-x/lsp_signature.nvim",
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			event = "InsertEnter *",
 		})
 
 		-- 集成非LSP模块之外的诊断,格式化,代码操作功能
