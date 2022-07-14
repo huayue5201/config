@@ -327,12 +327,12 @@ return require("packer").startup({
 		})
 
 		-- 项目书签
-		-- use({
-		-- 	"ThePrimeagen/harpoon",
-		-- 	config = function()
-		-- 		require("config.harpoon")
-		-- 	end,
-		-- })
+		use({
+			"ThePrimeagen/harpoon",
+			config = function()
+				require("config.harpoon")
+			end,
+		})
 
 		------------------------------LSP相关-------------------------------
 		--------------------------------------------------------------------
@@ -340,8 +340,7 @@ return require("packer").startup({
 		-- LSP基础组件（官方）
 		use({
 			"neovim/nvim-lspconfig",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
-			event = "InsertEnter *",
+			-- ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			config = function()
 				require("config.nvim-lspconfig")
 			end,
@@ -431,9 +430,8 @@ return require("packer").startup({
 		-- coq补全引擎
 		use({
 			"ms-jpq/coq_nvim",
-			run = "python3 -m coq deps",
 			after = { "nvim-lspconfig" },
-			event = "InsertEnter *",
+			run = "python3 -m coq deps",
 			requires = {
 				{ "ms-jpq/coq.artifacts" },
 				{ "ms-jpq/coq.thirdparty" },
