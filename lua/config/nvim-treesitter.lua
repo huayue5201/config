@@ -74,16 +74,6 @@ require("nvim-treesitter.configs").setup({
 				["ic"] = "@class.inner",
 			},
 		},
-		-- 将光标下的节点与下一个或上一个节点交换,像函数参数
-		swap = {
-			enable = true,
-			swap_next = {
-				["<leader>a"] = "@parameter.inner",
-			},
-			swap_previous = {
-				["<leader>A"] = "@parameter.inner",
-			},
-		},
 		move = {
 			enable = true,
 			set_jumps = true, -- whether to set jumps in the jumplist
@@ -106,14 +96,6 @@ require("nvim-treesitter.configs").setup({
 			goto_previous_end = {
 				["[M"] = "@function.outer",
 				["[]"] = "@class.outer",
-			},
-		},
-		lsp_interop = {
-			enable = true,
-			border = "none",
-			peek_definition_code = {
-				["<leader>df"] = "@function.outer",
-				["<leader>dF"] = "@class.outer",
 			},
 		},
 	},

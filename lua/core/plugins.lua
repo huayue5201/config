@@ -186,6 +186,9 @@ return require("packer").startup({
 				vim.g.matchup_delim_noskips = 1 -- recognize symbols within comments
 				vim.g.matchup_delim_noskips = 2 -- don't recognize anything in comments
 				vim.g.matchup_matchparen_deferred = 1 -- 延时突出显示，提高光标移动性能
+				vim.cmd([[
+				let g:matchup_matchparen_offscreen = {'method': 'popup'}
+				]])
 				-- -- 突出显示周围符号
 				-- vim.g.matchup_matchparen_deferred = 1
 				-- vim.g.matchup_matchparen_hi_surround_always = 1

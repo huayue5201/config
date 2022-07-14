@@ -1,21 +1,19 @@
 -- https://github.com/rcarriga/nvim-notify
 -- nvim-notify消息弹窗UI
-local notify_opts = {
-    -- 动画样式
-    -- fade_in_slide_out
-    -- fade
-    -- slide
-    -- static
-    stages = "slide",
-    -- 超时时间，默认 5s
-    timeout = 2000
-}
 
-local async = require("plenary.async")
-local notify = require("notify").async
-
+-- 设置notify为默认通知窗口
 vim.notify = require("notify")
 
+local notify_opts = {
+	-- 动画样式
+	-- fade_in_slide_out
+	-- fade
+	-- slide
+	-- static
+	stages = "slide",
+	-- 超时时间，默认 5s
+	timeout = 2000,
+}
 vim.notify.setup(notify_opts)
 -- 使用案例：
 -- 信息、级别、标题
