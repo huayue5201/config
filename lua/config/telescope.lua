@@ -7,7 +7,7 @@ require("telescope").load_extension("frecency")
 local telescope_actions = require("telescope.actions")
 
 -- aerial集成 :Telescope aerial(命令)
-require("telescope").load_extension("aerial")
+-- require("telescope").load_extension("aerial")
 
 -- 项目管理
 require("telescope").load_extension("projects")

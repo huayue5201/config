@@ -204,6 +204,17 @@ return require("packer").startup({
 			end,
 		})
 
+		-- 更好的折叠机制
+		use({
+			"kevinhwang91/nvim-ufo",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			keys = { "zR", "zM" },
+			requires = "kevinhwang91/promise-async",
+			config = function()
+				require("config.nvim-ufo")
+			end,
+		})
+
 		-------------------------------文本操作--------------------------------
 		---------------------------------------------------------------------
 
@@ -266,7 +277,7 @@ return require("packer").startup({
 			end,
 		})
 
-		----------------------------------搜索-----------------------------
+		----------------------------telescope相关--------------------------
 		-------------------------------------------------------------------
 
 		-- 模糊搜索
@@ -329,8 +340,20 @@ return require("packer").startup({
 		-- LSP基础组件（官方）
 		use({
 			"neovim/nvim-lspconfig",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			event = "InsertEnter *",
 			config = function()
 				require("config.nvim-lspconfig")
+			end,
+		})
+
+		-- 代码大纲
+		use({
+			"stevearc/aerial.nvim",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			after = { "nvim-lspconfig" },
+			config = function()
+				require("config.aerial")
 			end,
 		})
 
@@ -341,6 +364,7 @@ return require("packer").startup({
 		-- 代码操作标志💡
 		use({
 			"kosayoda/nvim-lightbulb",
+			after = { "nvim-lspconfig" },
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			requires = "antoinemadec/FixCursorHold.nvim",
 			config = function()
@@ -351,6 +375,7 @@ return require("packer").startup({
 		-- 代码操作UI
 		use({
 			"weilbith/nvim-code-action-menu",
+			after = { "nvim-lspconfig" },
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			cmd = "CodeActionMenu",
 			config = function()
@@ -370,6 +395,7 @@ return require("packer").startup({
 		-- 签名帮助
 		use({
 			"ray-x/lsp_signature.nvim",
+			after = { "nvim-lspconfig" },
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			event = "InsertEnter *",
 		})
@@ -377,6 +403,7 @@ return require("packer").startup({
 		-- 集成非LSP模块之外的诊断,格式化,代码操作功能
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
+			after = { "nvim-lspconfig" },
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			config = function()
 				require("config.null-ls")
@@ -386,6 +413,7 @@ return require("packer").startup({
 		-- LSP 加载进度UI
 		use({
 			"j-hui/fidget.nvim",
+			after = { "nvim-lspconfig" },
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			config = function()
 				require("config.fidget")
@@ -396,17 +424,6 @@ return require("packer").startup({
 		-- 一个简单的状态栏/winbar 组件，它使用 LSP 来显示您当前的代码上下文
 		use({ "SmiteshP/nvim-navic" })
 
-		-- 更好的折叠机制
-		use({
-			"kevinhwang91/nvim-ufo",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
-			keys = { "zR", "zM" },
-			requires = "kevinhwang91/promise-async",
-			config = function()
-				require("config.nvim-ufo")
-			end,
-		})
-
 		-----------------------------补全-----------------------------
 		--------------------------------------------------------------
 
@@ -415,6 +432,7 @@ return require("packer").startup({
 		use({
 			"ms-jpq/coq_nvim",
 			run = "python3 -m coq deps",
+			after = { "nvim-lspconfig" },
 			requires = {
 				{ "ms-jpq/coq.artifacts" },
 				{ "ms-jpq/coq.thirdparty" },
@@ -494,7 +512,7 @@ return require("packer").startup({
 			"michaelb/sniprun",
 			run = "bash ./install.sh",
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
-			cmd = { "SnipRun", "SnipRunOperator", "SnipClose", "SnipReset" },
+			keys = { "<leader>ru", "<leader>rc", "<leader>rd" },
 			config = function()
 				require("config.sniprun")
 			end,
@@ -509,14 +527,6 @@ return require("packer").startup({
 			cmd = "SidebarNvimToggle",
 			config = function()
 				require("config.sidebar")
-			end,
-		})
-
-		-- 代码大纲
-		use({
-			"stevearc/aerial.nvim",
-			config = function()
-				require("config.aerial")
 			end,
 		})
 
