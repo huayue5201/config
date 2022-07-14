@@ -60,8 +60,8 @@ vim.keymap.set("n", "<leader>ts", ":SidebarNvimToggle<cr>")
 -- marks
 -- 查看全部标签
 vim.keymap.set("n", "<leader>bk", "<cmd>MarksQFListAll<cr>")
--- telescope搜索标签
-vim.keymap.set("n", "<leader>fm", require("telescope.builtin").marks)
+-- telescope项目标签标签 harpoon提供
+vim.keymap.set("n", "<leader>fm", ":Telescope harpoon marks<cr>")
 
 -- TODO管理
 vim.keymap.set("n", "<leader>to", ":TodoTelescope<cr>")
