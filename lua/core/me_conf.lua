@@ -1,23 +1,30 @@
 -- 禁用自带插件，节省启动时间
+-- 符号对高亮突出
 vim.g.loaded_matchparen = 1
 vim.g.loaded_matchit = 1
+
 vim.g.loaded_logiPat = 1
 vim.g.loaded_rrhelper = 1
 vim.g.loaded_tarPlugin = 1
 vim.g.loaded_gzip = 1
 vim.g.loaded_zipPlugin = 1
 vim.g.loaded_2html_plugin = 1
-vim.g.loaded_shada_plugin = 1
+-- 单词错误检查
 vim.g.loaded_spellfile_plugin = 1
+-- 自带的文件管理器
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_tutor_mode_plugin = 1
-vim.g.loaded_remote_plugins = 1
+-- 远程通信插件
+-- vim.g.loaded_remote_plugins = 1
 
 -- http://neovim.io/news/
 -- 提升neovim器动速度,该功能在8.0会成为默认配置
 vim.g.do_filetype_lua = 1
 vim.g.did_load_filetypes = 0
+
+-- perl模块禁用
+vim.g.loaded_node_provider = 0
 
 -- 光标配置
 vim.cmd([[ 
