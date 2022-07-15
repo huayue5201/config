@@ -517,17 +517,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- 一键运行代码
-		use({
-			"michaelb/sniprun",
-			run = "bash ./install.sh",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
-			keys = { "<leader>ru", "<leader>rc", "<leader>rd" },
-			config = function()
-				require("config.sniprun")
-			end,
-		})
-
 		---------------------------------其他------------------------------
 		-------------------------------------------------------------------
 
