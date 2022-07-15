@@ -273,14 +273,14 @@ return require("packer").startup({
 		---------------------------------------------------------------------
 
 		-- tab跳出符号包围
-		use({
-			"abecodes/tabout.nvim",
-			wants = { "nvim-treesitter" }, -- or require if not used so far
-			after = { "coq_nvim" }, -- if a completion plugin is using tabs load it before
-			config = function()
-				require("config.tabout")
-			end,
-		})
+		-- use({
+		-- 	"abecodes/tabout.nvim",
+		-- 	wants = { "nvim-treesitter" }, -- or require if not used so far
+		-- 	after = { "coq_nvim" }, -- if a completion plugin is using tabs load it before
+		-- 	config = function()
+		-- 		require("config.tabout")
+		-- 	end,
+		-- })
 
 		-- 平滑滚动
 		use({
@@ -449,7 +449,6 @@ return require("packer").startup({
 				require("config.bqf")
 			end,
 		})
-
 
 		-- https://github.com/SmiteshP/nvim-navic
 		-- 一个简单的状态栏/winbar 组件，它使用 LSP 来显示您当前的代码上下文
