@@ -369,6 +369,10 @@ return require("packer").startup({
 			end,
 		})
 
+		-- https://github.com/onsails/lspkind.nvim
+		-- lsp插件图标集
+		use({ "onsails/lspkind.nvim", after = { "nvim-lspconfig" } })
+
 		-- 代码大纲
 		use({
 			"stevearc/aerial.nvim",
