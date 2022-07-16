@@ -4,7 +4,7 @@ require("pqf").setup({
 	signs = {
 		error = " ",
 		warning = " ",
-		info = " ",
-		hint = " ",
+		info = " ",
+		hint = " ",
 	},
 })
