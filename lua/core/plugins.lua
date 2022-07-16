@@ -94,7 +94,7 @@ return require("packer").startup({
 		---------------------------UI 视觉-----------------------------
 		---------------------------------------------------------------
 
-		--
+		-- https://github.com/Mofiqul/dracula.nvim
 		-- 主题
 		use({
 			"Mofiqul/dracula.nvim",
@@ -162,11 +162,9 @@ return require("packer").startup({
 			end,
 		})
 
+		-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		-- 基于treesitter的文本操作模块(官方)
 		use({ "nvim-treesitter/nvim-treesitter-textobjects" })
-
-		-- 彩虹括号(依赖treesitter)
-		use({ "p00f/nvim-ts-rainbow" })
 
 		-- 突出显示匹配符号并提供额外的操作符
 		-- https://github.com/andymass/vim-matchup/
