@@ -306,6 +306,7 @@ return require("packer").startup({
 		-- 模糊搜索
 		use({
 			"nvim-telescope/telescope.nvim",
+			tag = "0.1.0",
 			requires = {
 				-- fzf算法组件(由c实现)
 				{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
