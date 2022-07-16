@@ -17,5 +17,19 @@ require("bufferline").setup({
 				text_align = "left",
 			},
 		},
+		-- lsp支持
+		diagnostics = "nvim_lsp",
+		diagnostics_indicator = function(count, level, diagnostics_dict, context)
+			if context.buffer:current() then
+				return ""
+			end
+			return ""
+		end,
+		-- 忽略掉的buffer名称
+		custom_filter = function(buf_number, buf_numbers)
+			if vim.fn.bufname(buf_number) ~= "term" then
+				return true
+			end
+		end,
 	},
 })

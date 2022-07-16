@@ -117,6 +117,7 @@ return require("packer").startup({
 		-- Tab栏
 		use({
 			"akinsho/bufferline.nvim",
+			tag = "v2.*",
 			-- https://github.com/famiu/bufdelete.nvim
 			-- 删除缓冲区不打乱布局
 			requires = { "famiu/bufdelete.nvim" },

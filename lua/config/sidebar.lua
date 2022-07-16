@@ -9,12 +9,12 @@ require("sidebar-nvim").setup({
 			require("sidebar-nvim").close()
 		end,
 	},
-    -- sidbar位置
+	-- sidbar位置
 	side = "left",
 	-- 隐藏sidbar状态栏
 	hide_statusline = true,
 	-- 组件格式
-	sections = { "symbols", "files", "diagnostics", "git" },
+	sections = { "symbols", "diagnostics", "files", "git" },
 	-- 代码大纲模块
 	symbols = {
 		icon = " ƒ",
