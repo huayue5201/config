@@ -14,7 +14,7 @@ require("sidebar-nvim").setup({
 	-- 隐藏sidbar状态栏
 	hide_statusline = true,
 	-- 组件格式
-	sections = { "symbols", "diagnostics", "files", "git" },
+	sections = { "files", "symbols", "diagnostics", "git" },
 	-- 代码大纲模块
 	symbols = {
 		icon = " ƒ",
