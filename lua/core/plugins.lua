@@ -89,7 +89,7 @@ return require("packer").startup({
 		-- WARN:需要安装sqlite
 		-- https://github.com/tami5/sqlite.lua
 		-- 用于存储、检索、缓存和持久化SQLite数据库
-		use({ "tami5/sqlite.lua" })
+		-- use({ "tami5/sqlite.lua" })
 
 		---------------------------UI 视觉-----------------------------
 		---------------------------------------------------------------
@@ -237,7 +237,6 @@ return require("packer").startup({
 		-- 代码注释
 		use({
 			"numToStr/Comment.nvim",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			keys = { "gc", "gb", "gcc", "gbc", "gc0", "gco", "gcA" },
 			requires = {
 				-- https://github.com/JoosepAlviste/nvim-ts-context-commentstring
@@ -253,7 +252,6 @@ return require("packer").startup({
 		-- 环绕符号 快捷键：
 		use({
 			"kylechui/nvim-surround",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			keys = { "ys", "yss", "cs", "ds", "V" },
 			config = function()
 				require("config.nvim-surround")
@@ -310,13 +308,14 @@ return require("packer").startup({
 			requires = {
 				-- fzf算法组件(由c实现)
 				{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-				-- AI算法
-				{ "nvim-telescope/telescope-frecency.nvim" },
 			},
 			config = function()
 				require("config.telescope")
 			end,
 		})
+
+		-- 使用Mozilla的Frecency算法从编辑历史中选择文件时提供智能优先级
+		use({ "nvim-telescope/telescope-frecency.nvim", requires = { "tami5/sqlite.lua" } })
 
 		-- 项目管理
 		use({
@@ -337,6 +336,7 @@ return require("packer").startup({
 		-- 寄存器历史搜索与管理
 		use({
 			"acksld/nvim-neoclip.lua",
+			requires = { "kkharji/sqlite.lua", module = "sqlite" },
 			config = function()
 				require("config.nvim-neoclip")
 			end,
@@ -391,7 +391,6 @@ return require("packer").startup({
 		-- 代码操作标志💡
 		use({
 			"kosayoda/nvim-lightbulb",
-			after = { "nvim-lspconfig" },
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			requires = "antoinemadec/FixCursorHold.nvim",
 			config = function()
@@ -402,7 +401,6 @@ return require("packer").startup({
 		-- 代码操作UI
 		use({
 			"weilbith/nvim-code-action-menu",
-			after = { "nvim-lspconfig" },
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			cmd = "CodeActionMenu",
 			config = function()
@@ -422,7 +420,6 @@ return require("packer").startup({
 		-- 签名帮助
 		use({
 			"ray-x/lsp_signature.nvim",
-			after = { "nvim-lspconfig" },
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			event = "InsertEnter *",
 		})
@@ -430,7 +427,6 @@ return require("packer").startup({
 		-- 集成非LSP模块之外的诊断,格式化,代码操作功能
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
-			after = { "nvim-lspconfig" },
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			config = function()
 				require("config.null-ls")
@@ -440,7 +436,6 @@ return require("packer").startup({
 		-- LSP 加载进度UI
 		use({
 			"j-hui/fidget.nvim",
-			after = { "nvim-lspconfig" },
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			config = function()
 				require("config.fidget")
