@@ -446,14 +446,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- 美化quickfix lsp诊断内容
-		use({
-			"https://gitlab.com/yorickpeterse/nvim-pqf.git",
-			config = function()
-				require("config.bqf")
-			end,
-		})
-
 		-- https://github.com/SmiteshP/nvim-navic
 		-- 一个简单的状态栏/winbar 组件，它使用 LSP 来显示您当前的代码上下文
 		use({ "SmiteshP/nvim-navic" })
