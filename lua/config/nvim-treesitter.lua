@@ -8,12 +8,13 @@ require("nvim-treesitter.configs").setup({
 	sync_install = true,
 	-- 高亮模块启用与配置
 	highlight = {
-		enable = true,
 		-- 使用 treesitter 高亮而不是 neovim 内置的高亮
+		enable = true,
 		-- 此项为true会降低编辑器速度
 		additional_vim_regex_highlighting = false,
 	},
 	-- https://github.com/windwp/nvim-ts-autotag
+	-- 自动关闭html标签
 	autotag = {
 		enable = true,
 	},

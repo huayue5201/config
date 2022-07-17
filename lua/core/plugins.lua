@@ -228,6 +228,7 @@ return require("packer").startup({
 		-- 自动缩进
 		use({
 			"Darazaki/indent-o-matic",
+			event = "InsertEnter *",
 			cofnig = function()
 				require("config.indent-o-matic")
 			end,
