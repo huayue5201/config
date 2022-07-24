@@ -62,7 +62,12 @@ return require("packer").startup({
 		-- WARN::新加载插件需要把init.lua第一行注释掉,
 		--https://github.com/lewis6991/impatient.nvim
 		-- 加快启动时间
-		use({ "lewis6991/impatient.nvim" })
+		use({
+			"lewis6991/impatient.nvim",
+			config = function()
+				require("impatient").enable_profile()
+			end,
+		})
 
 		-- https://github.com/nathom/filetype.nvim
 		-- 该插件加快启动速度
@@ -556,6 +561,7 @@ return require("packer").startup({
 		-- git组件
 		use({
 			"lewis6991/gitsigns.nvim",
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
 			tag = "release", -- To use the latest release
 			config = function()
 				require("config.gitsigns")
