@@ -118,6 +118,15 @@ return require("packer").startup({
 			end,
 		})
 
+		-- 启动主题
+		use({
+			"goolord/alpha-nvim",
+			requires = { "kyazdani42/nvim-web-devicons" },
+			config = function()
+				require("alpha").setup(require("alpha.themes.startify").config)
+			end,
+		})
+
 		-- nvim输出消息的弹窗 UI
 		use({
 			"rcarriga/nvim-notify",
@@ -305,7 +314,6 @@ return require("packer").startup({
 			end,
 		})
 
-
 		-- WARN:需要安装sqlite
 		-- https://github.com/tami5/sqlite.lua
 		-- 使用Mozilla的Frecency算法从编辑历史中选择文件时提供智能优先级
@@ -449,6 +457,7 @@ return require("packer").startup({
 		-- coq补全引擎
 		use({
 			"ms-jpq/coq_nvim",
+			event = "InsertEnter *",
 			after = { "nvim-lspconfig" },
 			run = "python3 -m coq deps",
 			requires = {
@@ -481,7 +490,7 @@ return require("packer").startup({
 
 		-- https://github.com/windwp/nvim-ts-autotag
 		-- 自动关闭和自动重命名html标签
-		use({ "windwp/nvim-ts-autotag", ft = "html" })
+		use({ "windwp/nvim-ts-autotag", event = "InsertEnter *" })
 
 		-- https://github.com/Saecki/crates.nvim
 		-- 帮助管理crates.io依赖项
