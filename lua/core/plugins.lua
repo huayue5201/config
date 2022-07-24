@@ -95,7 +95,10 @@ return require("packer").startup({
 		use({
 			"Mofiqul/dracula.nvim",
 			config = function()
+				-- lualine背景色
 				vim.g.dracula_lualine_bg_color = "#4B0082"
+				-- 透明背景
+				vim.g.dracula_transparent_bg = true
 				vim.cmd([[
 				colorscheme dracula
                 ]])
