@@ -73,10 +73,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- https://github.com/antoinemadec/FixCursorHold.nvim
-		-- 解决一个nvovim的设计bug
-		use({ "antoinemadec/FixCursorHold.nvim" })
-
 		-- 多个插件依赖该模块(官方)
 		use({ "nvim-lua/plenary.nvim" })
 
@@ -85,11 +81,6 @@ return require("packer").startup({
 
 		-- 图标支持,很多插件依赖该插件
 		use({ "kyazdani42/nvim-web-devicons" })
-
-		-- WARN:需要安装sqlite
-		-- https://github.com/tami5/sqlite.lua
-		-- 用于存储、检索、缓存和持久化SQLite数据库
-		-- use({ "tami5/sqlite.lua" })
 
 		---------------------------UI 视觉-----------------------------
 		---------------------------------------------------------------
@@ -314,6 +305,9 @@ return require("packer").startup({
 			end,
 		})
 
+
+		-- WARN:需要安装sqlite
+		-- https://github.com/tami5/sqlite.lua
 		-- 使用Mozilla的Frecency算法从编辑历史中选择文件时提供智能优先级
 		use({ "nvim-telescope/telescope-frecency.nvim", requires = { "tami5/sqlite.lua" } })
 
@@ -392,6 +386,8 @@ return require("packer").startup({
 		use({
 			"kosayoda/nvim-lightbulb",
 			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			-- https://github.com/antoinemadec/FixCursorHold.nvim
+			-- 解决一个nvovim的设计bug
 			requires = "antoinemadec/FixCursorHold.nvim",
 			config = function()
 				require("config.nvim-lightbulb")
