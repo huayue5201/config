@@ -126,15 +126,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- 启动主题
-		use({
-			"goolord/alpha-nvim",
-			requires = { "kyazdani42/nvim-web-devicons" },
-			config = function()
-				require("alpha").setup(require("alpha.themes.startify").config)
-			end,
-		})
-
 		-- nvim输出消息的弹窗 UI
 		use({
 			"rcarriga/nvim-notify",
