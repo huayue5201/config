@@ -91,7 +91,7 @@ require("nvim-treesitter.configs").setup({
 		},
 	},
 })
--- -- 开启 Folding
+-- 开启 Folding
 -- vim.wo.foldmethod = "expr"
 -- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 -- :TSBufEnable {module}  当前缓冲区启用模块
