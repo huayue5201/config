@@ -419,14 +419,6 @@ return require("packer").startup({
 		-- 	end,
 		-- })
 
-		-- https://github.com/ray-x/lsp_signature.nvim
-		-- 签名帮助
-		use({
-			"ray-x/lsp_signature.nvim",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
-			event = "InsertEnter *",
-		})
-
 		-- 集成非LSP模块之外的诊断,格式化,代码操作功能
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
@@ -452,25 +444,35 @@ return require("packer").startup({
 		-----------------------------补全-----------------------------
 		--------------------------------------------------------------
 
-		-- https://github.com/ms-jpq/coq_nvim/blob/coq/docs/DISPLAY.md
-		-- coq补全引擎
+		-- cmp补全框架
 		use({
-			"ms-jpq/coq_nvim",
-			event = "InsertEnter *",
-			after = { "nvim-lspconfig" },
-			run = "python3 -m coq deps",
+			"hrsh7th/nvim-cmp",
 			requires = {
-				{ "ms-jpq/coq.artifacts" },
-				{ "ms-jpq/coq.thirdparty" },
+				-- 片段引擎
+				{ "hrsh7th/cmp-vsnip" },
+				-- 片段源
+				{ "hrsh7th/vim-vsnip" },
+				-- 函数签名
+				{ "hrsh7th/cmp-nvim-lsp-signature-help" },
+				-- lsp源
+				{ "hrsh7th/cmp-nvim-lsp" },
+				-- 缓冲区源
+				{ "hrsh7th/cmp-buffer" },
+				-- 系统路径源
+				{ "hrsh7th/cmp-path" },
 			},
+			config = function()
+				require("config.nvim-cmp")
+			end,
 		})
 
+		-- https://github.com/windwp/nvim-autopairs
 		-- 括号补全
 		use({
 			"windwp/nvim-autopairs",
 			event = "InsertEnter *",
 			config = function()
-				require("config.nvim-autopairs")
+				require("nvim-autopairs").setup({})
 			end,
 		})
 

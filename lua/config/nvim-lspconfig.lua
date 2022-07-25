@@ -2,10 +2,11 @@
 -- Lsp支持列表
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
-local lspconfig = require("lspconfig")
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
--- Automatically start coq
-vim.g.coq_settings = { auto_start = "shut-up" }
+local lspconfig = require("lspconfig")
 
 -- https://github.com/onsails/lspkind.nvim
 -- lsp图标集 lspkind插件提供
@@ -100,8 +101,6 @@ local on_attach = function(client, bufnr)
 		})
 	end
 
-	-- ray-x/lsp_signature.nvim
-	require("lsp_signature").on_attach()
 	-- https://github.com/SmiteshP/nvim-navic
 	require("nvim-navic").attach(client, bufnr)
 	-- https://github.com/stevearc/aerial.nvim
@@ -143,13 +142,18 @@ local on_attach = function(client, bufnr)
 end
 
 -- Enable some language servers with the additional completion capabilities offered by coq_nvim
+-- https://github.com/sumneko/lua-language-server
+-- https://github.com/typescript-language-server/typescript-language-server
+-- https://taplo.tamasfe.dev/cli/installation/cargo.html
 
 local servers = { "sumneko_lua", "rust_analyzer", "tsserver", "taplo" }
--- coq补全框架
+
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup(require("coq").lsp_ensure_capabilities({
+	lspconfig[lsp].setup({
+		-- on_attach = my_custom_on_attach,
 		on_attach = on_attach,
-	}))
+		capabilities = capabilities,
+	})
 end
 
 -- Lsp服务器加载
@@ -170,29 +174,13 @@ require("rust-tools").setup({
 	server = {
 		on_attach = on_attach,
 		standalone = true,
+		capabilities = capabilities,
 	}, -- rust-analyer options
 	dap = {
 		adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
 	},
 })
 
--- https://github.com/sumneko/lua-language-server
--- lua lsp
-require("lspconfig").sumneko_lua.setup({
-	on_attach = on_attach,
-})
-
--- https://github.com/typescript-language-server/typescript-language-server
--- typescript lsp
-require("lspconfig")["tsserver"].setup({
-	on_attach = on_attach,
-})
-
--- https://taplo.tamasfe.dev/cli/installation/cargo.html
--- tmol lsp
-require("lspconfig").taplo.setup({
-	on_attach = on_attach,
-})
 ---------------------------------------------------------------------
 
 -- 诊断图标
