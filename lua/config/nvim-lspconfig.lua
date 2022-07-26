@@ -146,7 +146,7 @@ end
 -- https://github.com/typescript-language-server/typescript-language-server
 -- https://taplo.tamasfe.dev/cli/installation/cargo.html
 
-local servers = { "sumneko_lua", "rust_analyzer", "tsserver", "taplo" }
+local servers = { "sumneko_lua", "tsserver", "taplo" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
