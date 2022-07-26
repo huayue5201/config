@@ -20,23 +20,24 @@ cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 cmp.setup({
 
-	-- 补全源列表
-	sources = {
-		{ name = "luasnip" },
-		{ name = "nvim_lsp_signature_help" },
-		{ name = "nvim_lsp" },
-		{ name = "buffer" },
-		{ neme = "path" },
-		-- saecki/crates.nvim提供方法
-		{ name = "crates" },
-	},
-
 	-- L3MON4D3/LuaSnip
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
 		end,
 	},
+
+	-- 补全源列表
+	sources = {
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "nvim_lsp_signature_help" },
+		{ name = "buffer" },
+		{ neme = "path" },
+		-- saecki/crates.nvim提供方法
+		{ name = "crates" },
+	},
+
 	-- ... Your other configuration ...
 
 	mapping = {

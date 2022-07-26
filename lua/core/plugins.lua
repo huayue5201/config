@@ -434,6 +434,15 @@ return require("packer").startup({
 		-----------------------------补全-----------------------------
 		--------------------------------------------------------------
 
+		-- 代码块引擎和码源
+		use({
+			"L3MON4D3/LuaSnip",
+			requires = {
+				{ "saadparwaiz1/cmp_luasnip" },
+				{ "molleweide/LuaSnip-snippets.nvim" },
+			},
+		})
+
 		-- cmp补全框架
 		use({
 			"hrsh7th/nvim-cmp",
@@ -451,9 +460,6 @@ return require("packer").startup({
 				require("config.nvim-cmp")
 			end,
 		})
-
-		-- 代码块引擎和码源
-		use({ "L3MON4D3/LuaSnip", requires = "saadparwaiz1/cmp_luasnip" })
 
 		-- https://github.com/windwp/nvim-autopairs
 		-- 括号补全
