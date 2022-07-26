@@ -27,22 +27,12 @@ cmp.setup({
 		end,
 	},
 
-	-- 补全源列表
-	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		{ name = "nvim_lsp_signature_help" },
-		{ name = "buffer" },
-		{ neme = "path" },
-		-- saecki/crates.nvim提供方法
-		{ name = "crates" },
-	},
-
 	-- ... Your other configuration ...
 
 	mapping = {
 
 		-- ... Your other mappings ...
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -65,6 +55,17 @@ cmp.setup({
 			end
 		end, { "i", "s" }),
 		-- ... Your other mappings ...
+	},
+
+	-- 补全源列表
+	sources = {
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "nvim_lsp_signature_help" },
+		{ name = "buffer" },
+		{ neme = "path" },
+		-- saecki/crates.nvim提供方法
+		{ name = "crates" },
 	},
 
 	-- 菜单方向
