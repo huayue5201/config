@@ -269,16 +269,6 @@ return require("packer").startup({
 		-------------------------------移动----------------------------------
 		---------------------------------------------------------------------
 
-		-- tab跳出符号包围
-		-- use({
-		-- 	"abecodes/tabout.nvim",
-		-- 	wants = { "nvim-treesitter" }, -- or require if not used so far
-		-- 	after = { "coq_nvim" }, -- if a completion plugin is using tabs load it before
-		-- 	config = function()
-		-- 		require("config.tabout")
-		-- 	end,
-		-- })
-
 		-- 平滑滚动
 		use({
 			"declancm/cinnamon.nvim",
