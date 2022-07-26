@@ -438,10 +438,6 @@ return require("packer").startup({
 		use({
 			"hrsh7th/nvim-cmp",
 			requires = {
-				-- 片段引擎
-				{ "hrsh7th/cmp-vsnip" },
-				-- 片段源
-				{ "hrsh7th/vim-vsnip" },
 				-- 函数签名
 				{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 				-- lsp源
@@ -456,11 +452,14 @@ return require("packer").startup({
 			end,
 		})
 
+		-- 代码块引擎和码源
+		use({ "L3MON4D3/LuaSnip", requires = "saadparwaiz1/cmp_luasnip" })
+
 		-- https://github.com/windwp/nvim-autopairs
 		-- 括号补全
 		use({
 			"windwp/nvim-autopairs",
-			event = "InsertEnter *",
+			-- event = "InsertEnter *",
 			config = function()
 				require("nvim-autopairs").setup({})
 			end,
