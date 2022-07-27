@@ -57,9 +57,6 @@ vim.keymap.set("n", "<leader>fp", ":Telescope projects<cr>")
 -- 打开侧边栏
 vim.keymap.set("n", "<leader>ts", ":SidebarNvimToggle<cr>")
 
--- marks
--- 查看全部标签
-vim.keymap.set("n", "<leader>bk", "<cmd>MarksQFListAll<cr>")
 -- telescope项目标签标签 harpoon提供
 vim.keymap.set("n", "<leader>fm", ":Telescope harpoon marks<cr>")
 
