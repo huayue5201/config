@@ -86,15 +86,16 @@ local on_attach = function(client, bufnr)
 	-- 查看引用
 	vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, bufopts)
 	-- 格式化
-	-- vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
+	vim.keymap.set("n", "<space>bf", vim.lsp.buf.formatting, bufopts)
 end
 
--- Enable some language servers with the additional completion capabilities offered by coq_nvim
 -- https://github.com/sumneko/lua-language-server
 -- https://github.com/typescript-language-server/typescript-language-server
 -- https://taplo.tamasfe.dev/cli/installation/cargo.html
+-- https://github.com/microsoft/pyright
 
-local servers = { "sumneko_lua", "tsserver", "taplo" }
+-- lsp服务器列表
+local servers = { "sumneko_lua", "tsserver", "taplo", "pyright" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
@@ -108,7 +109,6 @@ end
 ---------------------------------------------------------------------
 -- https://github.com/simrat39/rust-tools.nvim
 -- 通过rust-tools调用rust-analyer
-
 -- 通过CodeLLDB增强调试功能 WARN:依赖外部软件CodeLLDB
 -- https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb
 local extension_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.6.7/"

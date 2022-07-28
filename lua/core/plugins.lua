@@ -98,7 +98,7 @@ return require("packer").startup({
 				-- lualine背景色
 				vim.g.dracula_lualine_bg_color = "#4B0082"
 				-- 透明背景
-				vim.g.dracula_transparent_bg = true
+				-- vim.g.dracula_transparent_bg = true
 				vim.cmd([[
 				colorscheme dracula
                 ]])
@@ -169,7 +169,7 @@ return require("packer").startup({
 		-- https://github.com/andymass/vim-matchup/
 		use({
 			"andymass/vim-matchup",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go", "python" },
 			event = "InsertEnter *",
 			config = function()
 				vim.g.matchup_surround_enabled = 0 -- 禁用符号删改操作（1启用）
@@ -197,7 +197,7 @@ return require("packer").startup({
 		-- 更好的折叠机制
 		use({
 			"kevinhwang91/nvim-ufo",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go", "python" },
 			keys = { "zR", "zM" },
 			requires = "kevinhwang91/promise-async",
 			config = function()
@@ -218,7 +218,7 @@ return require("packer").startup({
 		-- 显示缩进线
 		use({
 			"lukas-reineke/indent-blankline.nvim",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go", "python" },
 			config = function()
 				require("config.blankline")
 			end,
@@ -368,7 +368,7 @@ return require("packer").startup({
 		-- 代码大纲
 		use({
 			"stevearc/aerial.nvim",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go", "python" },
 			after = { "nvim-lspconfig" },
 			config = function()
 				require("config.aerial")
@@ -382,7 +382,7 @@ return require("packer").startup({
 		-- 代码操作标志💡
 		use({
 			"kosayoda/nvim-lightbulb",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go", "python" },
 			-- https://github.com/antoinemadec/FixCursorHold.nvim
 			-- 解决一个nvovim的设计bug
 			requires = "antoinemadec/FixCursorHold.nvim",
@@ -394,7 +394,7 @@ return require("packer").startup({
 		-- 代码操作UI
 		use({
 			"weilbith/nvim-code-action-menu",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go", "python" },
 			cmd = "CodeActionMenu",
 			config = function()
 				vim.g.code_action_menu_window_border = "single"
@@ -412,7 +412,7 @@ return require("packer").startup({
 		-- 集成非LSP模块之外的诊断,格式化,代码操作功能
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go", "python" },
 			config = function()
 				require("config.null-ls")
 			end,
@@ -421,7 +421,7 @@ return require("packer").startup({
 		-- LSP 加载进度UI
 		use({
 			"j-hui/fidget.nvim",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go", "python" },
 			config = function()
 				require("config.fidget")
 			end,
@@ -504,7 +504,7 @@ return require("packer").startup({
 		--Debug组件
 		use({
 			"mfussenegger/nvim-dap",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go", "python" },
 			config = function()
 				require("config.nvim-dap")
 			end,
@@ -552,7 +552,7 @@ return require("packer").startup({
 		-- git组件
 		use({
 			"lewis6991/gitsigns.nvim",
-			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go" },
+			ft = { "lua", "rust", "javascript", "typescript", "html", "toml", "go", "python" },
 			tag = "release", -- To use the latest release
 			config = function()
 				require("config.gitsigns")

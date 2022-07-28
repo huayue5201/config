@@ -70,8 +70,5 @@ vim.keymap.set("n", "<leader>fe", "<cmd>NvimTreeToggle<CR>")
 -- 侧边栏
 vim.keymap.set("n", "<leader>ts", "<cmd>SidebarNvimToggle<CR>")
 
--- 格式化代码
-vim.keymap.set("n", "<leader>bf", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>")
-
 -- notify显示历史弹窗记录
 vim.keymap.set("n", "<leader>tn", "<cmd>lua require('telescope').extensions.notify.notify()<CR>")
