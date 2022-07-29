@@ -1,0 +1,174 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.006  000.006: --- NVIM STARTING ---
+000.235  000.229: locale set
+000.471  000.236: inits 1
+000.482  000.011: window checked
+000.485  000.003: parsing arguments
+002.360  001.876: init lua interpreter
+002.645  000.284: expanding arguments
+002.669  000.024: inits 2
+002.981  000.312: init highlight
+002.983  000.002: waiting for UI
+003.801  000.818: done waiting for UI
+003.815  000.014: init screen for UI
+003.832  000.016: init default mappings
+003.860  000.028: init default autocommands
+004.849  000.048  000.048: sourcing /usr/share/nvim/runtime/ftplugin.vim
+005.020  000.025  000.025: sourcing /usr/share/nvim/runtime/indent.vim
+005.076  000.011  000.011: sourcing /usr/share/nvim/archlinux.vim
+005.079  000.029  000.018: sourcing /etc/xdg/nvim/sysinit.vim
+017.518  000.121  000.121: sourcing /usr/share/nvim/runtime/pack/dist/opt/vimball/plugin/vimballPlugin.vim
+029.326  024.231  024.111: sourcing /home/huayue520/.config/nvim/init.lua
+029.346  001.154: sourcing vimrc file(s)
+030.212  000.032  000.032: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/filetype.nvim/filetype.vim
+030.395  000.024  000.024: sourcing /usr/share/nvim/runtime/filetype.lua
+030.426  000.014  000.014: sourcing /usr/share/nvim/runtime/filetype.vim
+030.719  000.077  000.077: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+030.840  000.358  000.281: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+031.609  000.012  000.012: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+031.654  000.012  000.012: sourcing /usr/share/nvim/runtime/plugin/health.vim
+031.697  000.027  000.027: sourcing /usr/share/nvim/runtime/plugin/man.vim
+031.721  000.010  000.010: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+031.744  000.009  000.009: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+031.770  000.012  000.012: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+034.718  000.316  000.316: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+035.353  000.157  000.157: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+036.306  004.420  003.947: sourcing /home/huayue520/.local/share/nvim/rplugin.vim
+036.331  004.547  000.128: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+036.442  000.065  000.065: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+036.472  000.010  000.010: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+036.521  000.029  000.029: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+036.557  000.009  000.009: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+036.578  000.007  000.007: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+036.645  000.017  000.017: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+036.740  000.014  000.014: sourcing /usr/share/nvim/runtime/pack/dist/opt/vimball/plugin/vimballPlugin.vim
+037.538  000.719  000.719: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+069.885  004.210  004.210: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/dracula.nvim/colors/dracula.lua
+087.414  049.689  045.479: sourcing /home/huayue520/.config/nvim/plugin/packer_compiled.lua
+087.723  002.761: loading rtp plugins
+088.161  000.062  000.062: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim/plugin/fix_cursorhold_nvim.vim
+088.390  000.145  000.145: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/LuaSnip/plugin/luasnip.vim
+088.530  000.041  000.041: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/bufdelete.nvim/plugin/bufdelete.vim
+088.796  000.015  000.015: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/fzf/plugin/fzf.vim
+088.904  000.015  000.015: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/harpoon/plugin/mark.vim
+089.575  000.513  000.513: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-cmp/plugin/cmp.lua
+089.755  000.093  000.093: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-hlslens/plugin/hlslens.vim
+089.896  000.059  000.059: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+090.717  000.645  000.645: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
+091.505  000.707  000.707: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
+091.714  000.114  000.114: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
+091.840  000.032  000.032: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+091.959  000.026  000.026: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+092.096  000.013  000.013: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/rust-tools.nvim/plugin/rust-tools.vim
+092.207  000.022  000.022: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/telescope-frecency.nvim/plugin/frecency.vim
+092.553  000.234  000.234: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
+092.672  000.022  000.022: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/todo-comments.nvim/plugin/todo.vim
+092.789  002.306: loading packages
+094.246  000.196  000.196: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/cmp-buffer/after/plugin/cmp_buffer.lua
+094.339  000.041  000.041: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
+094.469  000.080  000.080: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help/after/plugin/cmp_nvim_lsp_signature_help.lua
+094.608  000.091  000.091: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/cmp-path/after/plugin/cmp_path.lua
+094.909  000.234  000.234: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after/plugin/cmp_luasnip.lua
+094.915  001.484: loading after plugins
+094.925  000.010: inits 3
+096.879  001.954: reading ShaDa
+097.486  000.607: opening buffers
+098.043  000.558: BufEnter autocommands
+098.050  000.007: editing files in windows
+099.160  001.110: VimEnter autocommands
+099.166  000.007: UIEnter autocommands
+099.169  000.002: before starting main loop
+104.993  005.825: first screen update
+104.999  000.006: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.006  000.006: --- NVIM STARTING ---
+000.227  000.222: locale set
+000.469  000.241: inits 1
+000.480  000.011: window checked
+000.483  000.003: parsing arguments
+002.356  001.874: init lua interpreter
+002.633  000.277: expanding arguments
+002.659  000.025: inits 2
+002.975  000.316: init highlight
+002.977  000.002: waiting for UI
+003.848  000.871: done waiting for UI
+003.867  000.019: init screen for UI
+003.885  000.018: init default mappings
+003.912  000.027: init default autocommands
+004.899  000.054  000.054: sourcing /usr/share/nvim/runtime/ftplugin.vim
+005.070  000.025  000.025: sourcing /usr/share/nvim/runtime/indent.vim
+005.126  000.011  000.011: sourcing /usr/share/nvim/archlinux.vim
+005.129  000.029  000.018: sourcing /etc/xdg/nvim/sysinit.vim
+017.815  000.135  000.135: sourcing /usr/share/nvim/runtime/pack/dist/opt/vimball/plugin/vimballPlugin.vim
+031.632  026.487  026.352: sourcing /home/huayue520/.config/nvim/init.lua
+031.667  001.159: sourcing vimrc file(s)
+032.580  000.036  000.036: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/filetype.nvim/filetype.vim
+032.774  000.034  000.034: sourcing /usr/share/nvim/runtime/filetype.lua
+032.808  000.015  000.015: sourcing /usr/share/nvim/runtime/filetype.vim
+033.090  000.074  000.074: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+033.188  000.324  000.251: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+033.987  000.013  000.013: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+034.013  000.010  000.010: sourcing /usr/share/nvim/runtime/plugin/health.vim
+034.053  000.027  000.027: sourcing /usr/share/nvim/runtime/plugin/man.vim
+034.077  000.009  000.009: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+034.099  000.009  000.009: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+034.125  000.013  000.013: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+036.153  000.223  000.223: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+036.687  000.140  000.140: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+037.743  003.436  003.073: sourcing /home/huayue520/.local/share/nvim/rplugin.vim
+037.753  003.615  000.179: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+037.928  000.106  000.106: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+037.998  000.025  000.025: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+038.070  000.031  000.031: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+038.135  000.022  000.022: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+038.187  000.025  000.025: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+038.326  000.045  000.045: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+038.474  000.028  000.028: sourcing /usr/share/nvim/runtime/pack/dist/opt/vimball/plugin/vimballPlugin.vim
+039.471  000.876  000.876: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+083.067  002.655  002.655: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/dracula.nvim/colors/dracula.lua
+094.087  054.442  051.788: sourcing /home/huayue520/.config/nvim/plugin/packer_compiled.lua
+097.197  005.826: loading rtp plugins
+097.714  000.080  000.080: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim/plugin/fix_cursorhold_nvim.vim
+097.967  000.163  000.163: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/LuaSnip/plugin/luasnip.vim
+098.120  000.046  000.046: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/bufdelete.nvim/plugin/bufdelete.vim
+098.379  000.014  000.014: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/fzf/plugin/fzf.vim
+098.517  000.019  000.019: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/harpoon/plugin/mark.vim
+099.306  000.593  000.593: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-cmp/plugin/cmp.lua
+099.487  000.111  000.111: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-hlslens/plugin/hlslens.vim
+099.727  000.150  000.150: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+100.741  000.824  000.824: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
+101.914  001.074  001.074: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
+102.159  000.131  000.131: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
+102.291  000.043  000.043: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+102.420  000.032  000.032: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+102.595  000.016  000.016: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/rust-tools.nvim/plugin/rust-tools.vim
+102.712  000.025  000.025: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/telescope-frecency.nvim/plugin/frecency.vim
+103.105  000.277  000.277: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
+103.223  000.022  000.022: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/todo-comments.nvim/plugin/todo.vim
+103.341  002.526: loading packages
+104.954  000.256  000.256: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/cmp-buffer/after/plugin/cmp_buffer.lua
+105.060  000.051  000.051: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
+105.210  000.097  000.097: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help/after/plugin/cmp_nvim_lsp_signature_help.lua
+105.443  000.146  000.146: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/cmp-path/after/plugin/cmp_path.lua
+105.669  000.154  000.154: sourcing /home/huayue520/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after/plugin/cmp_luasnip.lua
+105.675  001.630: loading after plugins
+105.687  000.012: inits 3
+107.728  002.041: reading ShaDa
+108.360  000.633: opening buffers
+108.775  000.415: BufEnter autocommands
+108.780  000.005: editing files in windows
+109.656  000.875: VimEnter autocommands
+109.662  000.006: UIEnter autocommands
+109.664  000.002: before starting main loop
+114.733  005.069: first screen update
+114.737  000.004: --- NVIM STARTED ---
