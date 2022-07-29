@@ -361,18 +361,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- 外部依赖包管理器(lsp dap等)
-		use({
-			"williamboman/mason.nvim",
-			requires = {
-				-- 自动安装包
-				{ "williamboman/mason-lspconfig.nvim" },
-			},
-			config = function()
-				require("config.mason")
-			end,
-		})
-
 		-- https://github.com/onsails/lspkind.nvim
 		-- lsp插件图标集
 		use({ "onsails/lspkind.nvim", after = { "nvim-lspconfig" } })
