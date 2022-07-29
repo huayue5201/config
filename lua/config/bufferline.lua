@@ -25,6 +25,7 @@ require("bufferline").setup({
 			end
 			return ""
 		end,
+
 		-- 忽略掉的buffer名称
 		-- custom_filter = function(buf_number, buf_numbers)
 		-- 	if vim.fn.bufname(buf_number) ~= { "term", "dap-repl" } then
